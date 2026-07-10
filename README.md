@@ -1,36 +1,407 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
-
-## Getting Started
-
-First, run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+{
+  "images": [
+    {
+      "id": 1,
+      "title": "Enchanted Forest Guardian",
+      "imageUrl": "https://i.ibb.co.com/5gmpj05n/1.webp",
+      "prompt": "Ultra‑photoreal enchanted fantasy forest at bright twilight (clearly visible scene): lush mossy trees and ferns with razor‑sharp micro‑texture, dew and wet leaf speculars, gentle mist, soft sun‑moon mixed beams through the canopy. Swarms of glowing fireflies filling the air, subtle bioluminescent fungi near roots. One elegant stag‑like forest guardian with realistic anatomy and faint luminous runes on antlers, standing in a small clearing. Cinematic naturalism, high micro‑contrast, ultra‑detailed realism, not stylized.",
+      "category": "Fantasy",
+      "model": "Midjourney v6",
+      "resolution": "2048x2048",
+      "likes": 542,
+      "downloads": 138,
+      "createdAt": "2026-07-09T14:20:00Z",
+      "tags": ["forest", "fantasy", "stag", "fireflies", "mystical"]
+    },
+    {
+      "id": 2,
+      "title": "Pastry Night Market Diorama",
+      "imageUrl": "https://i.ibb.co.com/F4cWVnTp/2.webp",
+      "prompt": "Ultra‑detailed photoreal miniature diorama in the same whimsical “pastry metropolis” style: a cozy night market street built from desserts—croissant archways, éclair stalls, stacked sponge‑cake buildings, candy‑glass windows, caramel lantern posts, powdered‑sugar “snow” on rooftops and pavements, glossy icing drips and sugar crystals. New characters: tiny pastry chefs in aprons and hats bargaining with tiny woodland animals (foxes, rabbits) carrying little baskets. Warm interior window glow, soft golden evening light, gentle haze, tilt‑shift macro look with crisp edible textures and creamy bokeh depth, cinematic composition.",
+      "category": "Fantasy",
+      "model": "Stable Diffusion",
+      "resolution": "1024x1024",
+      "likes": 184,
+      "downloads": 59,
+      "createdAt": "2026-07-08T09:10:00Z",
+      "tags": ["pastry", "diorama", "miniature", "whimsical", "market"]
+    },
+    {
+      "id": 3,
+      "title": "Studio Fashion Cover Portrait",
+      "imageUrl": "https://i.ibb.co.com/nMCNHxwP/3.webp",
+      "prompt": "High-end fashion magazine cover photo: stylish person centered, confident pose, clean studio backdrop, softbox key light + subtle rim light, flawless but realistic skin texture, sharp eyes, premium wardrobe, minimal retouch look, shallow depth of field, crisp editorial composition.",
+      "category": "Realistic",
+      "model": "DALL·E 3",
+      "resolution": "1792x1024",
+      "likes": 497,
+      "downloads": 127,
+      "createdAt": "2026-07-07T18:35:00Z",
+      "tags": ["fashion", "editorial", "portrait", "studio", "magazine"]
+    },
+    {
+      "id": 4,
+      "title": "Avant-Garde Street Fashion",
+      "imageUrl": "https://i.ibb.co.com/TD5BjctF/4.webp",
+      "prompt": "Candid paparazzi-style high-fashion street shot: a stylish woman walking down an upscale fashion street, wearing avant‑garde designer outfit with luxury accessories (statement bag, jewelry, sunglasses), not looking at the camera; she is the clear focus, confident stride, natural crowd and boutiques softly behind her. Editorial magazine-cover vibe, crisp detail, realistic skin and fabric textures, shallow depth of field, natural daylight, cinematic composition.",
+      "category": "Realistic",
+      "model": "SDXL",
+      "resolution": "1536x1536",
+      "likes": 561,
+      "downloads": 146,
+      "createdAt": "2026-07-10T05:45:00Z",
+      "tags": ["fashion", "street", "editorial", "luxury", "candid"]
+    },
+    {
+      "id": 5,
+      "title": "Classic Muscle Car by the Beach",
+      "imageUrl": "https://i.ibb.co.com/hxCtWkPz/5.webp",
+      "prompt": "Ultra‑photoreal modern car photo of a classic late‑60s/early‑70s Dodge Charger muscle car (wide stance, hood scoop, aggressive grille) parked in a beachside lot in a sunny U.S. coastal town; palms and power lines, surfboards and coolers nearby, low stucco buildings, ocean haze on the horizon. Bright golden afternoon light, strong reflections on glossy paint, crisp tire and metal textures, shallow depth of field with creamy background bokeh, authentic American beach vibe, extremely detailed and realistic.",
+      "category": "Realistic",
+      "model": "Midjourney v6",
+      "resolution": "2048x1536",
+      "likes": 324,
+      "downloads": 88,
+      "createdAt": "2026-07-06T11:25:00Z",
+      "tags": ["car", "muscle-car", "beach", "vintage", "automotive"]
+    },
+    {
+      "id": 6,
+      "title": "Kitchen Renovation Before & After",
+      "imageUrl": "https://i.ibb.co.com/R4b7QtD6/6.webp",
+      "prompt": "Photoreal before/after renovation diptych in one frame (left=BEFORE, right=AFTER), perfectly matched geometry: same camera position, same lens, same height, same perspective, identical framing and vanishing lines. Scene: small apartment kitchen-BEFORE: outdated cabinets, worn laminate, bad lighting; AFTER: modern Scandinavian remodel with matte cabinetry and oak counter. Crisp realism, consistent daylight direction.",
+      "category": "Realistic",
+      "model": "Stable Diffusion",
+      "resolution": "1536x1024",
+      "likes": 231,
+      "downloads": 65,
+      "createdAt": "2026-07-09T08:15:00Z",
+      "tags": ["renovation", "interior", "kitchen", "before-after", "design"]
+    },
+    {
+      "id": 7,
+      "title": "Rainy Neon City Portrait",
+      "imageUrl": "https://i.ibb.co.com/zHxpymh8/7.webp",
+      "prompt": "Photorealistic cinematic portrait of a young woman with long silky black hair and a subtle smile, standing on a rainy neon-lit city street at night; outfit: beige trench coat, dark turtleneck, plaid scarf, black ankle boots, holding a transparent umbrella; wet pavement reflections, colorful bokeh signs, passing traffic light streaks, soft rim light and moody contrast, natural skin texture, 50mm lens, f/1.8, shallow depth of field, ultra-detailed, 8k, no text.",
+      "category": "Realistic",
+      "model": "DALL·E 3",
+      "resolution": "1792x1024",
+      "likes": 389,
+      "downloads": 112,
+      "createdAt": "2026-07-05T16:40:00Z",
+      "tags": ["portrait", "rain", "city", "night", "cinematic"]
+    },
+    {
+      "id": 8,
+      "title": "Fluffy 3D Cartoon Chihuahua",
+      "imageUrl": "https://i.ibb.co.com/qMGvBRBM/8.webp",
+      "prompt": "High-end 3D cartoon render of a funny cute long‑haired Chihuahua: oversized fluffy ears, big sparkling eyes, tiny body with huge soft fur tufts, cheeky grin with tongue slightly out, playful pose. Soft studio lighting with gentle rim light, vibrant warm colors, detailed groomed fur strands, smooth stylized materials, clean pastel background with subtle bokeh, crisp focus, premium animated‑movie look.",
+      "category": "Surreal",
+      "model": "SDXL",
+      "resolution": "1024x1024",
+      "likes": 145,
+      "downloads": 37,
+      "createdAt": "2026-07-10T10:30:00Z",
+      "tags": ["3d-render", "cartoon", "dog", "cute", "stylized"]
+    },
+    {
+      "id": 9,
+      "title": "Sports Car by Glowing Cube Art",
+      "imageUrl": "https://i.ibb.co.com/vxmty6B4/9.webp",
+      "prompt": "Ultra‑photoreal cinematic night street scene after rain: a glossy black luxury sports car parked low in the foreground, 3/4 front view, wet asphalt with strong reflections. Background: a towering public art installation of stacked glowing cubes in vivid cyan/magenta/yellow/orange, surrounded by modern skyscrapers and warm street lamps, light mist in the air. Real camera look (35mm), shallow depth of field, high dynamic range, crisp micro‑detail in paint, tires and puddles, subtle lens flare and bokeh, rich neon color grading, realistic reflections and refractions.",
+      "category": "Cyberpunk",
+      "model": "Midjourney v6",
+      "resolution": "2048x2048",
+      "likes": 408,
+      "downloads": 118,
+      "createdAt": "2026-07-08T20:05:00Z",
+      "tags": ["neon", "sports-car", "art-installation", "night", "reflections"]
+    },
+    {
+      "id": 10,
+      "title": "Futuristic City Plaza at Dusk",
+      "imageUrl": "https://i.ibb.co.com/0RLpydzG/10.webp",
+      "prompt": "Ultra‑real super‑futuristic city plaza at dusk: sleek streamlined (“aerodynamic”) architecture with flowing curved megastructures, seamless glass‑metal surfaces, integrated light bands, hovering transit pods, clean reflective pavement, people in modern minimal clothing for scale. Extreme material realism and micro‑detail (brushed metal grain, glass thickness, precise joints, subtle wear, realistic reflections). No photo/lens/film effects, no blur, no grain-crystal clear, lifelike, not stylized.",
+      "category": "Sci-Fi",
+      "model": "SDXL",
+      "resolution": "1536x1536",
+      "likes": 462,
+      "downloads": 131,
+      "createdAt": "2026-07-06T07:55:00Z",
+      "tags": ["futuristic", "architecture", "cityscape", "hover-pods", "sci-fi"]
+    },
+    {
+      "id": 11,
+      "title": "Anthropomorphic Cats in Paris",
+      "imageUrl": "https://i.ibb.co.com/SXJdfS0s/11.webp",
+      "prompt": "High-end 3D cartoon cinematic street scene in Paris at sunset: a charming cobblestone lane with warm café lights and red awnings, shallow depth of field with the Eiffel Tower softly blurred in the distance. Two anthropomorphic ginger-and-white cats walking toward camera—female in an elegant long red dress with a white lace collar, male in a tailored blue suit with a red tie holding a large bouquet of red-and-white flowers. Soft golden rim light, glossy eyes, detailed fur and fabric, realistic bokeh and wet-stone reflections.",
+      "category": "Fantasy",
+      "model": "DALL·E 3",
+      "resolution": "1792x1024",
+      "likes": 586,
+      "downloads": 149,
+      "createdAt": "2026-07-04T15:15:00Z",
+      "tags": ["cartoon", "paris", "cats", "romance", "whimsical"]
+    },
+    {
+      "id": 12,
+      "title": "Cartoon Kebab Orbiting a Planet",
+      "imageUrl": "https://i.ibb.co.com/Kp0Cvt7x/12.webp",
+      "prompt": "Ultra‑photoreal outer space scene with a realistic Earth‑like planet and starfield, cinematic lighting and atmospheric limb glow; a single whimsical cartoon kebab wrap (stylized, bright colors, clean outlines, cute simple face) spinning and orbiting the planet like a tiny satellite. Strong contrast between realistic space/planet textures and the cartoon kebab, sharp focus, subtle motion blur on the spinning wrap, playful but high-quality composition.",
+      "category": "Surreal",
+      "model": "Stable Diffusion",
+      "resolution": "1536x2048",
+      "likes": 278,
+      "downloads": 74,
+      "createdAt": "2026-07-09T22:50:00Z",
+      "tags": ["space", "surreal", "kebab", "planet", "whimsical"]
+    },
+    {
+      "id": 13,
+      "title": "Claymation Studio Diorama",
+      "imageUrl": "https://i.ibb.co.com/s9qQ3N45/13.webp",
+      "prompt": "Handcrafted claymation studio diorama: tiny plasticine characters on a miniature street set, visible fingerprints and tool marks, small light stands, rigging wires, camera on a mini tripod, soft studio lighting, shallow depth of field, stop-motion behind-the-scenes realism, rich detail.",
+      "category": "Surreal",
+      "model": "Midjourney v6",
+      "resolution": "2048x1536",
+      "likes": 352,
+      "downloads": 91,
+      "createdAt": "2026-07-07T06:45:00Z",
+      "tags": ["claymation", "stop-motion", "diorama", "miniature", "handcrafted"]
+    },
+    {
+      "id": 14,
+      "title": "Loft Renovation Before & After",
+      "imageUrl": "https://i.ibb.co.com/GwGRtMh/14.webp",
+      "prompt": "Photoreal before/after renovation diptych, matched lens and perspective with perfectly consistent vanishing points. Scene: open-plan loft-BEFORE: raw concrete, exposed wiring, unfinished surfaces; AFTER: industrial-chic finish with steel-and-glass partition, modern kitchen run, track lights. Preserve all architectural proportions exactly.",
+      "category": "Realistic",
+      "model": "SDXL",
+      "resolution": "1536x1024",
+      "likes": 216,
+      "downloads": 52,
+      "createdAt": "2026-07-05T12:00:00Z",
+      "tags": ["renovation", "loft", "industrial", "interior", "before-after"]
+    },
+    {
+      "id": 15,
+      "title": "Extreme Close-Up Portrait",
+      "imageUrl": "https://i.ibb.co.com/zVrbjTpV/15.webp",
+      "prompt": "Ultra‑photoreal cinematic extreme close‑up portrait of a young woman filling the frame (forehead to chin), direct eye contact, soft confident half‑smile; blue‑gray eyes with sharp catchlights, long lashes, natural brows, subtle eyeliner and warm coral lips, smooth realistic skin with visible pores. Warm low‑key tungsten lighting with gentle shadow falloff, dark blurred background, very shallow depth of field (85mm portrait look, f/1.4), crisp focus on both eyes, slight handheld feel and subtle video-frame compression realism.",
+      "category": "Realistic",
+      "model": "DALL·E 3",
+      "resolution": "1792x1024",
+      "likes": 438,
+      "downloads": 120,
+      "createdAt": "2026-07-08T13:30:00Z",
+      "tags": ["portrait", "closeup", "eyes", "cinematic", "photography"]
+    },
+    {
+      "id": 16,
+      "title": "Fine Dining Plated Dish",
+      "imageUrl": "https://i.ibb.co.com/FfWkLHY/16.webp",
+      "prompt": "Ultra‑real fine-dining restaurant plating: elegant minimalist dish (seared salmon or beef tenderloin) with precise micro‑greens, sauce swoosh, quenelle/purée, geometric garnish, spotless white plate, dramatic soft spotlight with subtle rim light, deep shadows, high micro‑detail, premium editorial food photography.",
+      "category": "Realistic",
+      "model": "DALL·E 3",
+      "resolution": "1792x1024",
+      "likes": 438,
+      "downloads": 120,
+      "createdAt": "2026-07-08T13:30:00Z",
+      "tags": ["food", "plating", "fine-dining", "culinary", "editorial"]
+    },
+    {
+      "id": 17,
+      "title": "Hand-Drawn Spacecraft Blueprint",
+      "imageUrl": "https://i.ibb.co.com/0pV0GKbp/17.webp",
+      "prompt": "Top-down photorealistic shot of a large drafting sheet on a wooden desk under a warm lamp, corners slightly curled. A highly realistic, extremely detailed hand-drawn pencil engineering blueprint of a futuristic space ark spacecraft; crisp clean linework with all ship modules and components clearly visible (engines, habitat rings, docking bays, cargo sections, radiators, antenna arrays), dense schematics with cross-sections and fine graphite hatching. Real paper grain, subtle graphite sheen, soft shadows. No logos, no watermark, no readable text.",
+      "category": "Sci-Fi",
+      "model": "DALL·E 3",
+      "resolution": "1792x1024",
+      "likes": 438,
+      "downloads": 120,
+      "createdAt": "2026-07-08T13:30:00Z",
+      "tags": ["blueprint", "spacecraft", "engineering", "schematic", "technical-drawing"]
+    },
+    {
+      "id": 18,
+      "title": "Cyberpunk Film Noir Portrait",
+      "imageUrl": "https://i.ibb.co.com/jv7k5RN7/18.jpg",
+      "prompt": "Use the exact same face from the reference image and generate a Cinematic portrait of an East Asian woman with long, messy black hair, wearing a black leather button-up shirt. Her face is illuminated by a dramatic split lighting effect, with warm golden light on one side and cool blue highlights on the other. In the background, a massive, translucent, ethereal projection of a pair of intense human eyes overlays a dark, smoky blue atmosphere. Cyberpunk film noir aesthetic, moody tone, high-contrast shadows, shot on 35mm lens, photorealistic texture, 8k resolution.",
+      "category": "Cyberpunk",
+      "model": "DALL·E 3",
+      "resolution": "1792x1024",
+      "likes": 438,
+      "downloads": 120,
+      "createdAt": "2026-07-08T13:30:00Z",
+      "tags": ["cyberpunk", "portrait", "film-noir", "neon", "moody"]
+    },
+    {
+      "id": 19,
+      "title": "Face Emerging From Liquid Mercury",
+      "imageUrl": "https://i.ibb.co.com/Df5rd0MH/19.jpg",
+      "prompt": "hyper-close portrait of a woman’s face emerging through a surface of liquid red mercury, the metallic fluid stretched and clinging to her skin as it breaks. The surface tension distorts her lips and one eye beneath it, creating warped reflections. The mercury gleams with deep crimson highlights, reflecting faint gold rim light along her cheekbones. Her visible eye is half-lidded, calm and distant. Background dissolves into pure black. Fine particles shimmer in the air. Style: noir couture, liquid metal realism, cinematic lighting.",
+      "category": "Surreal",
+      "model": "DALL·E 3",
+      "resolution": "1792x1024",
+      "likes": 438,
+      "downloads": 120,
+      "createdAt": "2026-07-08T13:30:00Z",
+      "tags": ["surreal", "portrait", "liquid-metal", "mercury", "noir"]
+    },
+    {
+      "id": 20,
+      "title": "Face Emerging From Liquid Mercury",
+      "imageUrl": "https://i.ibb.co.com/gZYkftj1/20.png",
+      "prompt": "hyper-close portrait of a woman’s face emerging through a surface of liquid red mercury, the metallic fluid stretched and clinging to her skin as it breaks. The surface tension distorts her lips and one eye beneath it, creating warped reflections. The mercury gleams with deep crimson highlights, reflecting faint gold rim light along her cheekbones. Her visible eye is half-lidded, calm and distant. Background dissolves into pure black. Fine particles shimmer in the air. Style: noir couture, liquid metal realism, cinematic lighting.",
+      "category": "Surreal",
+      "model": "DALL·E 3",
+      "resolution": "1792x1024",
+      "likes": 438,
+      "downloads": 120,
+      "createdAt": "2026-07-08T13:30:00Z",
+      "tags": ["surreal", "portrait", "liquid-metal", "mercury", "noir"],
+      "note": "Duplicate of id 19 in the source data (identical prompt)"
+    },
+    {
+      "id": 21,
+      "title": "Sorceress in the Avalon Stone Circle",
+      "imageUrl": "https://i.ibb.co.com/3yGV4B0c/21.png",
+      "prompt": "Morgan le Fay seated upon an ancient moss-covered stone within a sacred stone circle on the mist-covered island of Avalon at night, relaxed yet commanding posture, one leg bent and raised, the other extended downward, regal and grounded presence, centered cinematic composition. Pale noble woman with refined aristocratic facial structure, high cheekbones, soft but defined jawline, delicate chin, natural lips slightly parted, calm serious expression with quiet authority, piercing emerald green eyes with deep reflective quality, steady intense gaze. Ultra detailed natural skin texture with visible pores, soft freckles across nose and cheeks, subtle imperfections, realistic skin microtexture, soft subsurface scattering, cool moonlit tones with faint green bounce light from runes, natural tonal variation avoiding artificial smoothness. Long dark brown hair flowing freely in the wind, natural strand separation, individual strands visible, subtle movement, loose strands illuminated by cold rim light, soft desaturated highlights. Wearing ceremonial emerald velvet robes in a slightly loosened draped form, heavy medieval fabric with natural weight and volume, deep rich green tones absorbing light, intricate silver Celtic embroidery woven into sleeves, neckline and edges, highly detailed thread patterns, layered cloth folds and compression points, ornate emerald belt clasp resting lower on the waist with engraved metalwork and gemstone reflections. Natural feminine anatomy with realistic proportions, relaxed asymmetrical pose, subtle definition of collarbones and shoulders, smooth transitions across torso and legs. One leg bent with bare foot resting against the stone, anatomically correct foot structure, realistic toes with natural spacing and nail detail, subtle skin compression against stone surface, elegant emerald foot jewelry wrapping around ankle and foot, fine chain details and gemstone reflections interacting with moonlight. Hands resting naturally, one placed on the stone, the other relaxed near her lap, realistic hand anatomy with visible knuckles, natural finger curvature and spacing, soft shadowing between fingers. Two black ravens perched nearby, highly detailed feathers with subtle iridescence, realistic anatomy, sharp attentive gaze, integrated naturally into the scene. Ancient standing stones forming a circle, rough weathered surfaces covered with moss and lichen, deep carved runes glowing with soft emerald magical light, runes emitting subtle volumetric glow, light diffusing into surrounding mist and interacting with stone texture. Thick drifting fog and mist surrounding the ground, layered atmospheric depth, illuminated by green rune light and cold moonlight. Dark lake and distant island silhouette in the background under full moon, soft reflections on water surface, faint atmospheric perspective. Cinematic lighting with strong cold moon key light from above, soft rim light outlining her silhouette and hair, secondary green rune glow creating subtle underlighting and color contrast, high dynamic range with soft shadow transitions. 50mm lens, shallow depth of field, cinematic focus on subject, soft background blur with atmospheric haze. Dark fantasy realism, arthurian legend atmosphere, druidic queen presence, ultra detailed textures, photorealistic rendering, masterpiece, 8k, film still.",
+      "category": "Fantasy",
+      "model": "DALL·E 3",
+      "resolution": "1792x1024",
+      "likes": 438,
+      "downloads": 120,
+      "createdAt": "2026-07-08T13:30:00Z",
+      "tags": ["fantasy", "sorceress", "avalon", "druidic", "mystical"]
+    },
+    {
+      "id": 22,
+      "title": "Urban Fashion Mixed-Media Collage",
+      "imageUrl": "https://i.ibb.co.com/sdznynWm/22.jpg",
+      "prompt": "Photorealistic mixed media fashion collage of a cool young woman in a modern urban setting. Shot slightly below, straight on or soft 3/4 body composition. Confident cool girl presence wearing relaxed wide leg trousers, fitted cropped tank, and sleek streamlined sneakers. Full color, natural skin tones, dark hair, polished fashion editorial look. Colorful New York style background: tall buildings, busy street energy, layered architecture, vibrant yet clean and editorial. Mixed media collage elements throughout: torn paper textures, editorial paper layers, subtle halftone details, graphic shapes. Vivid neon accents acid lime green and hot pink with high saturation. Thin but clearly visible neon outline around the woman, small glowing graphic details integrated into the collage. Bold, modern, visually striking but controlled and aesthetically clean. Subtle film grain. High end Instagram grid aesthetic: aspirational, modern, visually cohesive.",
+      "category": "Realistic",
+      "model": "DALL·E 3",
+      "resolution": "1792x1024",
+      "likes": 438,
+      "downloads": 120,
+      "createdAt": "2026-07-08T13:30:00Z",
+      "tags": ["fashion", "collage", "street-style", "neon", "editorial"]
+    },
+    {
+      "id": 23,
+      "title": "Superhero Footballer World Cup Poster",
+      "imageUrl": "https://i.ibb.co.com/b5wYfnFK/23.jpg",
+      "prompt": "Ultra-cinematic FIFA World Cup 2026 fantasy poster, aerial view from the edge of the atmosphere above Rio de Janeiro, glowing sunrise breaking through dramatic clouds, massive futuristic football stadium floating among the clouds, giant golden world championship trophy shining at the center of the pitch, young female footballer flying toward the stadium superhero-style, viewed from behind, wearing Brazil national team colors (yellow jersey, blue shorts, white socks, golden boots), long ponytail flowing in the wind, jersey number 10, powerful athletic pose, golden light trails behind her, breathtaking scale, Christ the Redeemer visible in the distance, city lights sparkling below, volumetric clouds, epic sports photography, ultra-realistic details, dynamic perspective, dramatic lighting, vibrant Brazil colors, award-winning composition, hyper-detailed, photorealistic, 8K, masterpiece, FIFA World Cup atmosphere, cinematic depth, vertical poster",
+      "category": "Fantasy",
+      "model": "DALL·E 3",
+      "resolution": "1792x1024",
+      "likes": 438,
+      "downloads": 120,
+      "createdAt": "2026-07-08T13:30:00Z",
+      "tags": ["sports", "football", "poster", "fantasy", "brazil"]
+    },
+    {
+      "id": 24,
+      "title": "Luxury Beauty Campaign Billboard",
+      "imageUrl": "https://i.ibb.co.com/B5ZDPLgz/24.jpg",
+      "prompt": "Using the provided reference image, create an ultra-realistic mega-scale luxury beauty advertising campaign displayed on a massive 3D digital billboard wrapped around the corner of a modern skyscraper in Times Square, New York. The billboard dominates the city skyline and features a breathtaking high-fashion portrait of the same woman, styled like an iconic international cosmetics ambassador. The model has long, glossy dark chocolate-brown hair with voluminous waves, flawless porcelain skin, softly sculpted features, bold defined brows, warm hazel eyes, luxurious matte crimson lips, and a confident, elegant expression looking directly at the viewer. A subtle breeze lifts strands of her hair, adding cinematic movement. She wears a tailored satin-finish crimson red blazer with sharp lapels and sophisticated luxury styling. The billboard background is a rich monochromatic red gradient with dramatic editorial lighting that makes the portrait appear larger than life. The scene is photographed from street level with a wide-angle perspective, showcasing towering glass skyscrapers, urban architecture, reflections, traffic, pedestrians, and the enormous LED display seamlessly integrated into the building façade. The billboard should resemble a world-class luxury cosmetics campaign with premium branding aesthetics and polished commercial production quality. Capture the image in photorealistic 8K, ultra-detailed skin texture, premium hair rendering, cinematic daylight, high dynamic range, architectural realism, luxury fashion advertising, editorial beauty campaign, Times Square energy, hyper-realistic digital signage, and masterpiece-quality composition. Style Keywords: mega billboard, Times Square advertising, luxury beauty campaign, high-fashion editorial, cinematic cityscape, global cosmetics ambassador, photorealistic, premium commercial photography, architectural realism, 8K, ultra detailed.",
+      "category": "Realistic",
+      "model": "DALL·E 3",
+      "resolution": "1792x1024",
+      "likes": 438,
+      "downloads": 120,
+      "createdAt": "2026-07-08T13:30:00Z",
+      "tags": ["beauty", "billboard", "advertising", "fashion", "cityscape"]
+    },
+    {
+      "id": 25,
+      "title": "Dark Fantasy King on His Throne",
+      "imageUrl": "https://i.ibb.co.com/XZKc6vK8/25.jpg",
+      "prompt": "An ultra-cinematic dark fantasy portrait of an extremely handsome, intense bearded man sitting on a massive royal throne, sharp jawline, piercing eyes, thick styled hair, perfectly groomed beard, dark luxury black outfit, partially unbuttoned shirt, powerful king aura, deep intense expression, one hand resting near face, dramatic pose, smoky atmosphere, cracked dark palace walls, golden light rays falling from above, dark shadows, embers floating in the air, royal gothic throne with intricate details, dark luxury aesthetic, cinematic lighting, ultra realistic skin texture, moody atmosphere, masterpiece, hyper detailed, 8K, sharp focus, black and gold color palette.",
+      "category": "Fantasy",
+      "model": "DALL·E 3",
+      "resolution": "1792x1024",
+      "likes": 438,
+      "downloads": 120,
+      "createdAt": "2026-07-08T13:30:00Z",
+      "tags": ["fantasy", "king", "throne", "dark", "portrait"]
+    },
+    {
+      "id": 26,
+      "title": "AI Entrepreneur With Holographic Panel",
+      "imageUrl": "https://i.ibb.co.com/S4wxv1Xg/26.jpg",
+      "prompt": "Ultra-realistic cinematic portrait of a confident young AI entrepreneur standing in a futuristic cyberpunk data center, holding a glowing transparent holographic glass panel. Neon green and electric blue lighting, advanced AI dashboards, server racks, digital interfaces, floating HUD elements, volumetric lighting, high-tech atmosphere, dramatic rim light, sharp facial details, stylish black hoodie, professional beard, intense gaze looking sideways. The holographic panel displays bold futuristic typography with glowing borders and digital effects. Cybersecurity, artificial intelligence, data intelligence theme. Hyper-detailed, photorealistic, depth of field, bokeh lights, Unreal Engine 5 quality, sci-fi aesthetics, cinematic composition, ultra-sharp focus, 8K resolution, futuristic branding poster, trending on ArtStation, masterpiece, highly detailed, neon glow, advanced technology environment, vertical 9:16 aspect ratio.",
+      "category": "Cyberpunk",
+      "model": "DALL·E 3",
+      "resolution": "1792x1024",
+      "likes": 438,
+      "downloads": 120,
+      "createdAt": "2026-07-08T13:30:00Z",
+      "tags": ["cyberpunk", "ai", "technology", "hologram", "futuristic"]
+    },
+    {
+      "id": 27,
+      "title": "Cyborg Soldier and Spider Tank",
+      "imageUrl": "https://i.ibb.co.com/qY0GkxTN/27.jpg",
+      "prompt": "A hyper-realistic cinematic scene featuring a cybernetic soldier standing beside a massive Spider Tank (Fuchikoma-style armored combat machine) in a futuristic cyberpunk city. The cybernetic soldier wears a sleek tactical combat suit, with a confident and calm expression, short hair flowing slightly in the neon-lit atmosphere, realistic cybernetic details visible on her arms and body. She stands in a commanding pose next to the enormous spider-like armored vehicle, emphasizing the contrast between the human cyborg soldier and the powerful war machine. The Spider Tank has a highly detailed mechanical design with four articulated spider legs, heavy armored plating, hydraulic pistons, exposed cables, advanced weapon systems, glowing sensors, and realistic metal textures with scratches, dirt, and battle damage. Its powerful cannon and robotic eyes create an intimidating presence. Steam escapes from its joints while small mechanical parts move subtly, showing advanced engineering. The environment is a dark futuristic metropolis inspired by cyberpunk aesthetics: towering glass skyscrapers, holographic advertisements, rain-soaked streets, neon signs, atmospheric fog, reflections on wet pavement, distant flying vehicles, and a moody blue-and-purple color palette. Cinematic lighting highlights the metallic surfaces, character details, and robotic machinery. Ultra-realistic rendering, 8K resolution, extremely detailed textures, realistic skin and cybernetic materials, complex mechanical engineering, volumetric lighting, dramatic shadows, depth of field, Unreal Engine 5 style, high-end sci-fi movie concept art, dynamic composition, masterpiece quality, photorealistic, sharp focus.",
+      "category": "Cyberpunk",
+      "model": "DALL·E 3",
+      "resolution": "1792x1024",
+      "likes": 438,
+      "downloads": 120,
+      "createdAt": "2026-07-08T13:30:00Z",
+      "tags": ["cyberpunk", "mecha", "robot", "sci-fi", "futuristic"],
+      "note": "Original prompt names a specific copyrighted anime character; title/tags generalized instead of using the character's name."
+    },
+    {
+      "id": 28,
+      "title": "Spain National Team Sports Poster",
+      "imageUrl": "https://i.ibb.co.com/xtZpvb8V/28.jpg",
+      "prompt": "Ultra-realistic sports poster, full-body female football player wearing Spain national team jersey number 10, sitting confidently on a large concrete podium, legs apart, hands resting naturally between knees, intense expression, long flowing dark hair, cinematic fashion-editorial photography, premium sports magazine cover style. Spain national colors red, gold, and navy blue. Vintage textured background with giant bold \"ESPAÑA\" typography behind subject, Spanish flag brushstroke artwork, Spanish crest elements, stadium crowd atmosphere on one side, historic Spanish architecture on the other side, subtle grunge textures, luxury poster design. Full body visible from head to football boots, detailed golden football cleats, long navy socks with gold accents, realistic football beside feet, dramatic studio lighting, ultra-sharp focus, high contrast, rich colors, photorealistic skin texture, depth of field, premium FIFA World Cup promotional aesthetic. Graphic design elements, editorial layout, luxury sports branding, bold typography, layered composition, symmetrical framing, centered subject, cinematic shadows, highly detailed fabric textures, realistic jersey stitching, 8K resolution, masterpiece quality, award-winning sports photography, poster-ready composition, vertical 9 16 aspect ratio.",
+      "category": "Realistic",
+      "model": "DALL·E 3",
+      "resolution": "1792x1024",
+      "likes": 438,
+      "downloads": 120,
+      "createdAt": "2026-07-08T13:30:00Z",
+      "tags": ["sports", "football", "poster", "spain", "editorial"]
+    },
+    {
+      "id": 29,
+      "title": "Cursed Geisha Doll Portrait",
+      "imageUrl": "https://i.ibb.co.com/TDwXpVVm/29.webp",
+      "prompt": "Hyperrealistic cinematic close-up portrait of a haunting Japanese horror doll or cursed geisha spirit, eerie and atmospheric with dramatic lighting. SUBJECT DESCRIPTION: A terrifyingly beautiful female figure with a glossy white porcelain mask for a face featuring large empty black eye sockets, bold black stitch-like markings running vertically down the center of the face, red painted lips, and tear-like black streaks, long flowing straight white hair cascading down, wearing an extremely ornate traditional headdress adorned with red flowers, silver metalwork, hanging chains, and jewels. ACTION & INTERACTION: Facing directly toward the viewer with a motionless, unsettling stare, head slightly tilted in a doll-like pose. APPAREL: Intricate traditional Japanese-inspired robes in red and white with ornate patterns visible at the collar and shoulders, combined with the elaborate ceremonial headdress. ENVIRONMENT & FOREGROUND: Extreme close-up focusing on the masked face and headdress, with detailed textures of the glossy mask, metallic chains, and fabric clearly visible. BACKGROUND & LIGHTING: Dark, moody interior with soft cinematic lighting creating strong highlights on the white mask and metallic elements, deep shadows enhancing the eerie atmosphere, shallow depth of field with atmospheric bokeh.",
+      "category": "Surreal",
+      "model": "DALL·E 3",
+      "resolution": "1792x1024",
+      "likes": 438,
+      "downloads": 120,
+      "createdAt": "2026-07-08T13:30:00Z",
+      "tags": ["horror", "doll", "geisha", "eerie", "portrait"]
+    },
+    {
+      "id": 30,
+      "title": "Y2K Glitch Harajuku Collage",
+      "imageUrl": "https://i.ibb.co.com/Kp9SGTGt/30.webp",
+      "prompt": "maximalist Y2K harajuku scrapbook collage artwork, anime-influenced, close-up portrait of a girl with deep violet and purple skin gazing upward, one eye closed with black ink tears streaking down her face, the other eye replaced by a glowing neon X symbol in hot pink and electric blue burning like a broken screen, black ink drips and splatter trailing from both eyes down the cheeks neck and chest like corrupted data leaking, cracked line details fracturing across the skin like shattered porcelain, lips parted in deep glossy violet, long dark hair framing the face dissolving into the background, the entire image built as a dense hot pink and cyan collage with glitter star bursts and four-pointed sparkle flares scattered across the violet skin surface, fuchsia floral silhouettes overlapping the face, teal cityscape cutout fragments and torn newspaper clippings in magenta duotone layered throughout, Y2K zine editorial texture coating the composition, the deep black background punctuated with hot pink and cyan collage elements, hyperfeminine maximalist mixed media energy fused with dark glitch horror mood, ultra-saturated neon palette bleeding into the dark, portrait orientation",
+      "category": "Vaporwave",
+      "model": "DALL·E 3",
+      "resolution": "1792x1024",
+      "likes": 438,
+      "downloads": 120,
+      "createdAt": "2026-07-08T13:30:00Z",
+      "tags": ["y2k", "collage", "glitch", "anime", "neon"]
+    }
+  ],
+  "categories": [
+    { "id": 1, "name": "Sci-Fi", "slug": "sci-fi" },
+    { "id": 2, "name": "Pixel Art", "slug": "pixel-art" },
+    { "id": 3, "name": "Fantasy", "slug": "fantasy" },
+    { "id": 4, "name": "Cyberpunk", "slug": "cyberpunk" },
+    { "id": 5, "name": "Surreal", "slug": "surreal" },
+    { "id": 6, "name": "Vaporwave", "slug": "vaporwave" },
+    { "id": 7, "name": "Realistic", "slug": "realistic" },
+    { "id": 8, "name": "Minimal", "slug": "minimal" },
+    { "id": 9, "name": "Steampunk", "slug": "steampunk" }
+  ]
+}
