@@ -89,7 +89,7 @@ export default function Navbar() {
           ))}
 
           <div className="pt-4 flex flex-col gap-3">
-            <Button variant="bordered" fullWidth>
+            <Button variant="bordered" className='border' fullWidth>
               Sign Up
             </Button>
 
