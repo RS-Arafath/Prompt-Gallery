@@ -43,7 +43,7 @@ export default function Navbar() {
                       : 'text-gray-700 hover:text-blue-600'
                   }
                   after:absolute after:left-0 after:bottom-0
-                  after:h-[2px] after:bg-blue-600
+                  after:h-0.5 after:bg-blue-600
                   after:transition-all after:duration-300
                   ${active ? 'after:w-full' : 'after:w-0 hover:after:w-full'}`}
                 >
