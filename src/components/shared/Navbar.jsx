@@ -22,8 +22,8 @@ export default function Navbar() {
     <header className="border-b bg-white">
       <nav className="max-w-7xl mx-auto h-16 px-4 sm:px-6 lg:px-8 flex items-center justify-between">
         {/* Logo */}
-        <Link href="/images/logo.png" className="flex items-center gap-2">
-          <Image src="" alt="Logo" width={34} height={34} />
+        <Link href="/" className="flex items-center justify-start ">
+          <Image src="/images/logo.png" alt="Logo" width={140} height={140} />
           <h2 className="text-lg md:text-xl font-bold">Prompt Gallery</h2>
         </Link>
 
