@@ -56,7 +56,7 @@ export default function Navbar() {
 
         {/* Desktop Buttons */}
         <div className="hidden md:flex gap-3">
-          <Button variant="bordered">Sign Up</Button>
+          <Button variant="bordered" className='border'>Sign Up</Button>
           <Button color="primary">Sign In</Button>
         </div>
 
