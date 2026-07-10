@@ -60,7 +60,7 @@ export default function Navbar() {
           <Button color="primary">Sign In</Button>
         </div>
 
-        {/* Mobile Menu Button */}
+       
         <button className="md:hidden" onClick={() => setOpen(!open)}>
           {open ? <X size={26} /> : <Menu size={26} />}
         </button>
