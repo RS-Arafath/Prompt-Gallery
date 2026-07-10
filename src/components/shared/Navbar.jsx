@@ -63,7 +63,7 @@ export default function Navbar() {
 
         {/* Desktop Buttons */}
         <div className="hidden md:flex gap-3">
-          <Button variant="bordered" className=" hover:bg-gray-100">
+          <Button variant="bordered" className="border hover:bg-gray-100">
             Sign Up
           </Button>
           <Button color="primary">Sign In</Button>
