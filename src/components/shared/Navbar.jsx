@@ -22,7 +22,7 @@ export default function Navbar() {
     <header className="border-b bg-white">
       <nav className="max-w-7xl mx-auto h-16 px-4 sm:px-6 lg:px-8 flex items-center justify-between">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2">
+        <Link href="/images/logo.png" className="flex items-center gap-2">
           <Image src="" alt="Logo" width={34} height={34} />
           <h2 className="text-lg md:text-xl font-bold">Prompt Gallery</h2>
         </Link>
@@ -56,11 +56,12 @@ export default function Navbar() {
 
         {/* Desktop Buttons */}
         <div className="hidden md:flex gap-3">
-          <Button variant="bordered" className='border'>Sign Up</Button>
+          <Button variant="bordered" className="border">
+            Sign Up
+          </Button>
           <Button color="primary">Sign In</Button>
         </div>
 
-       
         <button className="md:hidden" onClick={() => setOpen(!open)}>
           {open ? <X size={26} /> : <Menu size={26} />}
         </button>
@@ -89,7 +90,7 @@ export default function Navbar() {
           ))}
 
           <div className="pt-4 flex flex-col gap-3">
-            <Button variant="bordered" className='border' fullWidth>
+            <Button variant="bordered" className="border" fullWidth>
               Sign Up
             </Button>
 
