@@ -54,7 +54,7 @@ const TopGenerated = async () => {
                 {item.title}
               </h3>
 
-              <div className="mt-2 sm:mt-4 flex items-center justify-between text-sm text-gray-600">
+              <div className="mt-3 sm:mt-4 flex items-center justify-between text-sm text-gray-600">
                 <div className="flex items-center gap-2">
                   <Download size={18} />
                   <span>{item.downloads ?? 0}</span>
