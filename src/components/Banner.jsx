@@ -37,11 +37,11 @@ const Banner = () => {
               <div className="flex h-full items-center bg-black/55">
                 <div className="w-full px-5 sm:px-8 lg:px-12 xl:px-16">
                   <div className="text-left text-white">
-                    <h1 className="font-bold leading-tight text-3xl sm:text-4xl md:text-5xl lg:text-7xl ">
+                    <h1 className="font-bold leading-tight text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-outfit">
                       Turn Ideas into <br></br> Stunning <span className='text-purple-700'>AI Art</span>
                     </h1>
 
-                    <p className="mt-4 max-w-2xl text-sm leading-7 text-gray-200 sm:text-base md:text-lg lg:mt-6 lg:text-xl xl:text-2xl">
+                    <p className="mt-4 max-w-2xl text-sm leading-7 text-gray-200 sm:text-base md:text-lg lg:mt-6 lg:text-xl xl:text-2xl font-outfit">
                       Generate high-quality AI images from simple prompts in
                       seconds.
                     </p>

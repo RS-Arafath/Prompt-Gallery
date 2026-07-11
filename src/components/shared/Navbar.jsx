@@ -33,11 +33,11 @@ export default function Navbar() {
                 height={56}
                 className="h-14 w-14 object-contain dark:brightness-200"
           />
-          <h2 className="text-lg md:text-xl font-bold">Prompt Gallery</h2>
+          <h2 className="text-lg md:text-xl font-outfit font-bold">Prompt Gallery</h2>
         </Link>
 
         {/* Desktop Menu */}
-        <ul className="hidden md:flex items-center gap-5 lg:gap-8">
+        <ul className="hidden font-inter md:flex items-center gap-5 lg:gap-8">
           {navLinks.map((item) => {
             const active = pathname === item.href;
 

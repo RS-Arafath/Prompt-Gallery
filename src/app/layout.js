@@ -4,7 +4,7 @@ import { Analytics } from '@vercel/analytics/react';
 import Navbar from '@/components/shared/Navbar';
 import Footer from '@/components/shared/Footer';
 const outfitfonts = Outfit({
-  variable: '--font-outfit-sans',
+  variable: '--font-outfit',
   subsets: ['latin'],
 });
 
