@@ -11,7 +11,7 @@ const Footer = () => {
         <div className="absolute inset-0 bg-gradient-to-tr from-purple-500/5 via-transparent to-blue-500/5 dark:from-purple-500/10 dark:to-blue-500/10" />
       </div>
 
-      <div className="mx-auto max-w-7xl  px-6 py-16 sm:px-8 lg:px-10">
+      <div className="mx-auto container  px-6 py-16 sm:px-8 lg:px-10">
         <div className="grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-4">
           {/* Brand */}
           <div className="max-w-sm">
