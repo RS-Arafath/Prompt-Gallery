@@ -2,6 +2,7 @@
 import Image from "next/image";
 import { Download, Heart } from "lucide-react";
 import LikeButton from "./shared/LikeButton";
+import { Button } from "@heroui/react";
 
 const TopGenerated = async () => {
   const res = await fetch("https://promptgallery-ai.vercel.app/data.json", {
@@ -24,19 +25,18 @@ const TopGenerated = async () => {
         {topGenerated.map((item) => (
           <div
             key={item.id}
-            className="overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
+            className="flex h-full flex-col overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
           >
-            <div className="relative aspect-[3/3.5] cursor-pointer overflow-hidden rounded-t-2xl bg-neutral-950">
+            <div className="relative aspect-[3/3.5] cursor-pointer overflow-hidden bg-neutral-950">
               {/* Background */}
               <Image
                 src={item.imageUrl}
                 alt=""
                 fill
-                className="object-cover  blur-2xl  brightness-50"
-                aria-hidden="true"
+                className="object-cover blur-2xl brightness-50"
+                aria-hidden
               />
 
-              {/* Optional dark overlay */}
               <div className="absolute inset-0 bg-black/10" />
 
               {/* Foreground */}
@@ -44,12 +44,13 @@ const TopGenerated = async () => {
                 src={item.imageUrl}
                 alt={item.title}
                 fill
-                className="object-fill hover:scale-110 duration-200 transform rounded-2xl p-3 h-"
+                className="rounded-2xl object-fill p-3 transition-transform duration-300 hover:scale-115"
               />
             </div>
 
-            <div className="p-5">
-              <h3 className="line-clamp-2 text-lg font-semibold">
+            {/* Content */}
+            <div className="flex flex-1 flex-col p-5">
+              <h3 className="line-clamp-2 min-h-[56px] text-lg font-semibold">
                 {item.title}
               </h3>
 
@@ -60,6 +61,12 @@ const TopGenerated = async () => {
                 </div>
 
                 <LikeButton initialLikes={item.likes ?? 0} />
+              </div>
+
+              <div className="mt-5 flex justify-end">
+                <Button variant="outline" className="">
+                  Get Prompt
+                </Button>
               </div>
             </div>
           </div>
