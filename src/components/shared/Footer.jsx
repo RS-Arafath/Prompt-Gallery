@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 const Footer = () => {
   return (
-    <footer className="relative mt-24 overflow-hidden border-t border-gray-200 dark:border-white/10 bg-white dark:bg-[#0a0a0b]">
+    <footer className="mx-auto relative mt-24 overflow-hidden border-t border-gray-200 dark:border-white/10 bg-white dark:bg-[#0a0a0b]">
       {/* Background */}
       <div className="absolute inset-0 -z-10">
         <div className="absolute left-0 top-0 h-72 w-72 rounded-full bg-purple-500/10 blur-3xl" />
@@ -11,7 +11,7 @@ const Footer = () => {
         <div className="absolute inset-0 bg-gradient-to-tr from-purple-500/5 via-transparent to-blue-500/5 dark:from-purple-500/10 dark:to-blue-500/10" />
       </div>
 
-      <div className="mx-auto max-w-7xl px-6 py-16 sm:px-8 lg:px-10">
+      <div className="mx-auto max-w-7xl  px-6 py-16 sm:px-8 lg:px-10">
         <div className="grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-4">
           {/* Brand */}
           <div className="max-w-sm">
