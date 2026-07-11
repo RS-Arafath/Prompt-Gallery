@@ -53,7 +53,7 @@ const TopGenerated = async () => {
               <h3 className="line-clamp-2 min-h-[56px] font-bold text-lg text-slate-700">
                 {item.title}
               </h3>
-
+<div className="border mt-3"></div>
               <div className="mt-3 sm:mt-4 flex items-center justify-between text-sm text-gray-600">
                 <div className="flex items-center gap-2">
                   <Download size={18} />
