@@ -50,11 +50,11 @@ const TopGenerated = async () => {
 
             {/* Content */}
             <div className="flex flex-1 flex-col p-5">
-              <h3 className="line-clamp-2 min-h-[56px] text-lg font-semibold">
+              <h3 className="line-clamp-2 font-bold text-lg text-slate-700">
                 {item.title}
               </h3>
 
-              <div className="mt-4 flex items-center justify-between text-sm text-gray-600">
+              <div className="mt-2 sm:mt-4 flex items-center justify-between text-sm text-gray-600">
                 <div className="flex items-center gap-2">
                   <Download size={18} />
                   <span>{item.downloads ?? 0}</span>
