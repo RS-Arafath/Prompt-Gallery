@@ -29,9 +29,9 @@ export default function Navbar() {
           <Image
             src="/images/logo.png"
             alt="Logo"
-            width={100}
-            height={100}
-            className="w-25 h-20 items-start  md:h-20 md:w-30"
+             width={56}
+                height={56}
+                className="h-14 w-14 object-contain dark:brightness-200"
           />
           <h2 className="text-lg md:text-xl font-bold">Prompt Gallery</h2>
         </Link>

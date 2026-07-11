@@ -2,6 +2,7 @@ import { Geist, Geist_Mono } from 'next/font/google';
 import './globals.css';
 import { Analytics } from '@vercel/analytics/react';
 import Navbar from '@/components/shared/Navbar';
+import Footer from '@/components/shared/Footer';
 const geistSans = Geist({
   variable: '--font-geist-sans',
   subsets: ['latin'],
@@ -26,7 +27,9 @@ export default function RootLayout({ children }) {
       <body className="min-h-full flex flex-col">
         <main>
           <Navbar></Navbar>
-          {children}</main>
+          {children}
+        <Footer></Footer>
+        </main>
         <Analytics />
       </body>
     </html>
