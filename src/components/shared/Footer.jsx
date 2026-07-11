@@ -46,7 +46,7 @@ const Footer = () => {
               <li>
                 <Link
                   href="/"
-                  className="transition-colors duration-200 hover:text-black dark:hover:text-white"
+                  className="transition-colors duration-100 hover:text-black dark:hover:text-white"
                 >
                   Generate
                 </Link>
@@ -55,7 +55,7 @@ const Footer = () => {
               <li>
                 <Link
                   href="/"
-                  className="transition-colors duration-200 hover:text-black dark:hover:text-white"
+                  className="transition-colors duration-100 hover:text-black dark:hover:text-white"
                 >
                   Gallery
                 </Link>
@@ -64,7 +64,7 @@ const Footer = () => {
               <li>
                 <Link
                   href="/"
-                  className="transition-colors duration-200 hover:text-black dark:hover:text-white"
+                  className="transition-colors duration-100 hover:text-black dark:hover:text-white"
                 >
                   Pricing
                 </Link>
@@ -82,7 +82,7 @@ const Footer = () => {
               <li>
                 <Link
                   href="/"
-                  className="transition-colors duration-200 hover:text-black dark:hover:text-white"
+                  className="transition-colors duration-100 hover:text-black dark:hover:text-white"
                 >
                   About
                 </Link>
@@ -91,7 +91,7 @@ const Footer = () => {
               <li>
                 <Link
                   href="/"
-                  className="transition-colors duration-200 hover:text-black dark:hover:text-white"
+                  className="transition-colors duration-100 hover:text-black dark:hover:text-white"
                 >
                   Contact
                 </Link>
@@ -100,7 +100,7 @@ const Footer = () => {
               <li>
                 <Link
                   href="/"
-                  className="transition-colors duration-200 hover:text-black dark:hover:text-white"
+                  className="transition-colors duration-100 hover:text-black dark:hover:text-white"
                 >
                   Privacy Policy
                 </Link>
@@ -109,7 +109,7 @@ const Footer = () => {
               <li>
                 <Link
                   href="/"
-                  className="transition-colors duration-200 hover:text-black dark:hover:text-white"
+                  className="transition-colors duration-100 hover:text-black dark:hover:text-white"
                 >
                   Terms & Conditions
                 </Link>
@@ -150,22 +150,22 @@ const Footer = () => {
 
           <div className="flex flex-wrap items-center justify-center gap-6">
             <Link
-              href="/privacy"
-              className="transition-colors duration-200 hover:text-black dark:hover:text-white"
+              href="/"
+              className="transition-colors duration-100 hover:text-black dark:hover:text-white"
             >
               Privacy
             </Link>
 
             <Link
-              href="/terms"
-              className="transition-colors duration-200 hover:text-black dark:hover:text-white"
+              href="/"
+              className="transition-colors duration-100 hover:text-black dark:hover:text-white"
             >
               Terms
             </Link>
 
             <Link
-              href="/contact"
-              className="transition-colors duration-200 hover:text-black dark:hover:text-white"
+              href="/"
+              className="transition-colors duration-100 hover:text-black dark:hover:text-white"
             >
               Contact
             </Link>
