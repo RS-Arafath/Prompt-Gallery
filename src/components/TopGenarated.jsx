@@ -50,7 +50,7 @@ const TopGenerated = async () => {
 
             {/* Content */}
             <div className="flex flex-1 flex-col p-5">
-              <h3 className="line-clamp-2 font-bold text-lg text-slate-700">
+              <h3 className="line-clamp-2 min-h-[56px] font-bold text-lg text-slate-700">
                 {item.title}
               </h3>
 
@@ -63,7 +63,7 @@ const TopGenerated = async () => {
                 <LikeButton initialLikes={item.likes ?? 0} />
               </div>
 
-              <div className="mt-5 flex justify-end">
+              <div className="mt-5 flex justify-end ">
                 <Button variant="outline" className="">
                   Get Prompt
                 </Button>
