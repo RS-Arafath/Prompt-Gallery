@@ -53,19 +53,11 @@ const Banner = () => {
                           size="lg"
                           className="px-6 py-6 text-base lg:px-8 lg:text-lg"
                         >
-                          Generate Now
+                        Explore Now
                         </Button>
                       </Link>
 
-                      <Link href="/">
-                        <Button
-                          variant="bordered"
-                          size="lg"
-                          className="border px-6 py-6 text-base text-white lg:px-8 lg:text-lg"
-                        >
-                          View Pricing
-                        </Button>
-                      </Link>
+                     
                     </div>
                   </div>
                 </div>
