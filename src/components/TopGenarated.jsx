@@ -2,16 +2,13 @@ import Image from 'next/image';
 import { Download } from 'lucide-react';
 import LikeButton from './shared/LikeButton';
 import { Button } from '@heroui/react';
-
+import fs from 'fs/promises';
+import path from 'path';
  export const TopGenerated = async () => {
-  const res = await fetch(
-    `${process.env.NEXT_PUBLIC_SITE_URL}/top-gen.json`,
-    {
-      cache: 'no-cache',
-    },
-  );
-
-  const data = await res.json();
+  
+const filePath = path.join(process.cwd(), 'public', 'top-gen.json');
+const fileContents = await fs.readFile(filePath, 'utf-8');
+const data = JSON.parse(fileContents);
   const topGenerated = data.slice(0, 8);
 
   return (

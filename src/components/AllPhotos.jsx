@@ -3,23 +3,21 @@ import { Button } from '@heroui/react';
 import { Download, Link2 } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
-
+import fs from 'fs/promises';
+import path from 'path';
 
 export const AllPhotos = async () => {
-  const res = await fetch(
-    `${process.env.NEXT_PUBLIC_SITE_URL}/allPhotos.json`,
-    {
-      cache: 'no-cache',
-    },
-  );
-  const data = await res.json();
+  const filePath = path.join(process.cwd(), 'public', 'allPhotos.json');
+  const fileContents = await fs.readFile(filePath, 'utf-8');
+  const data = JSON.parse(fileContents);
   const allPhotos = data.slice(0, 12);
+
   return (
     <div className="container  mx-auto">
       <section className=" px-4 py-12 font-inter">
         <div className="mb-8">
           <h2 className="text-3xl md:text-4xl lg:text-5xl  font-bold">
-            All Photo
+            All Photos
           </h2>
           <p className="mt-2 text-gray-500">
             Discover the most popular AI-generated artworks.

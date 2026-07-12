@@ -5,14 +5,13 @@ import { Button } from '@heroui/react';
 import { Download } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
+import fs from 'fs/promises';
+import path from 'path';
 const AllPhotosPage = async() => {
-   const res = await fetch(
-     `${process.env.NEXT_PUBLIC_SITE_URL}/allPhotos.json`,
-     {
-       cache: 'no-cache',
-     },
-   );
-  const allPhotos = await res.json();
+  const filePath = path.join(process.cwd(), 'public', 'allPhotos.json');
+    const fileContents = await fs.readFile(filePath, 'utf-8');
+    const data = JSON.parse(fileContents);
+    const allPhotos = data;
  
   return (
     <div className="container  mx-auto">
