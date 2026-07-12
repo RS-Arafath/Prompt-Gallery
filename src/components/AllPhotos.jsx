@@ -19,7 +19,7 @@ export const AllPhotos = async () => {
       <section className=" px-4 py-12 font-inter">
         <div className="mb-8">
           <h2 className="text-3xl md:text-4xl lg:text-5xl  font-bold">
-            All Photos
+            All Photo
           </h2>
           <p className="mt-2 text-gray-500">
             Discover the most popular AI-generated artworks.
