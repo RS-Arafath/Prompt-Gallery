@@ -6,9 +6,14 @@ import Link from 'next/link';
 
 
 export const AllPhotos = async () => {
-  const res = await fetch('http://localhost:3000/allPhotos.json');
-  const allPhotos = await res.json();
-  
+  const res = await fetch(
+    `${process.env.NEXT_PUBLIC_SITE_URL}/allPhotos.json`,
+    {
+      cache: 'no-cache',
+    },
+  );
+  const data = await res.json();
+  const allPhotos = data.slice(0, 12);
   return (
     <div className="container  mx-auto">
       <section className=" px-4 py-12 font-inter">
