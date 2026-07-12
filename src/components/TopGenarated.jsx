@@ -4,9 +4,7 @@ import LikeButton from './shared/LikeButton';
 import { Button } from '@heroui/react';
 
  export const TopGenerated = async () => {
-  const res = await fetch('http://localhost:3000/top-gen.json', {
-    cache: 'no-cache',
-  });
+  const res = await fetch('http://localhost:3000/top-gen.json');
 
   const data = await res.json();
   const topGenerated = data.slice(0, 8);
