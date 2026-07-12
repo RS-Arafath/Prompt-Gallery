@@ -4,7 +4,7 @@ import LikeButton from './shared/LikeButton';
 import { Button } from '@heroui/react';
 
  export const TopGenerated = async () => {
-  const res = await fetch('https://promptgallery-ai.vercel.app/data.json', {
+  const res = await fetch('http://localhost:3000/top-gen.json', {
     cache: 'no-cache',
   });
 
