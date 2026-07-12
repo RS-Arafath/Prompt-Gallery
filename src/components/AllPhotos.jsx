@@ -6,7 +6,7 @@ import Link from 'next/link';
 
 
 export const AllPhotos = async () => {
-  const res = await fetch('http://localhost:3000/all-photos.json', {
+  const res = await fetch('http://localhost:3000/allPhotos.json', {
     cache: 'no-cache',
   });
   const data = await res.json();
