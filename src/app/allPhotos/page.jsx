@@ -6,9 +6,9 @@ import { Download } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 const AllPhotosPage = async() => {
-   const res = await fetch('https://promptgallery-ai.vercel.app/data.json', {
-    cache: 'no-cache',
-  });
+   const res = await fetch('http://localhost:3000/all-photos.json', {
+     cache: 'no-cache',
+   });
   const allPhotos = await res.json();
  
   return (
