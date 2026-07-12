@@ -14,13 +14,15 @@ import { Button } from '@heroui/react';
   return (
     <section className="container mx-auto px-4 py-12 font-inter">
       <div className="mb-8">
-        <h2 className="text-3xl font-bold">Top Generated Images</h2>
+        <h2 className="text-2xl  md:text-4xl lg:text-5xl  font-bold">
+          Top Generated Images
+        </h2>
         <p className="mt-2 text-gray-500">
           Discover the most popular AI-generated artworks.
         </p>
       </div>
 
-      <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
+      <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
         {topGenerated.map((item) => (
           <div
             key={item.id}

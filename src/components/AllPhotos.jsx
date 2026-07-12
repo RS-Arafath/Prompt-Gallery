@@ -1,6 +1,6 @@
 import LikeButton from '@/components/shared/LikeButton';
 import { Button } from '@heroui/react';
-import { Download } from 'lucide-react';
+import { Download, Link2 } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -15,13 +15,15 @@ export const AllPhotos = async () => {
     <div className="container  mx-auto">
       <section className=" px-4 py-12 font-inter">
         <div className="mb-8">
-          <h2 className="text-3xl lg:text-4xl font-bold">All Photos</h2>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl  font-bold">
+            All Photos
+          </h2>
           <p className="mt-2 text-gray-500">
             Discover the most popular AI-generated artworks.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
           {allPhotos.map((item) => (
             <div
               key={item.id}
@@ -75,9 +77,9 @@ export const AllPhotos = async () => {
         </div>
       </section>
 
-      <div className=" w-full mx-auto">
-        <Button>
-          <Link href='/allPhotos'>View All photos</Link>
+      <div className="flex justify-center mt-8">
+        <Button size='lg' >
+          <Link href="/allPhotos"> View All Photos</Link>
         </Button>
       </div>
     </div>
