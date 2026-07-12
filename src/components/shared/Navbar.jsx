@@ -10,8 +10,8 @@ import { Menu, X } from 'lucide-react';
 const navLinks = [
   { href: '/', label: 'Home' },
 
-  { href: '/pricing', label: 'Pricing' },
-  { href: '/all-photos', label: 'All Photos' },
+  { href: '/topGenarated', label: 'Top Genarated' },
+  { href: '/allPhotos', label: 'All Photos' },
   { href: '/profile', label: 'Profile' },
 ];
 

@@ -3,7 +3,7 @@ import { Download } from 'lucide-react';
 import LikeButton from './shared/LikeButton';
 import { Button } from '@heroui/react';
 
-const TopGenerated = async () => {
+ export const TopGenerated = async () => {
   const res = await fetch('https://promptgallery-ai.vercel.app/data.json', {
     cache: 'no-cache',
   });
@@ -12,7 +12,7 @@ const TopGenerated = async () => {
   const topGenerated = data.slice(0, 8);
 
   return (
-    <section className="container mx-auto px-4 py-12">
+    <section className="container mx-auto px-4 py-12 font-inter">
       <div className="mb-8">
         <h2 className="text-3xl font-bold">Top Generated Images</h2>
         <p className="mt-2 text-gray-500">
