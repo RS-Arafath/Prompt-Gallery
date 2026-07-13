@@ -1,4 +1,4 @@
-import { Outfit,Inter } from 'next/font/google';
+import { Outfit,Inter,JetBrains_Mono } from 'next/font/google';
 import './globals.css';
 import { Analytics } from '@vercel/analytics/react';
 import Navbar from '@/components/shared/Navbar';
@@ -13,6 +13,12 @@ const inter = Inter({
   subsets: ['latin'],
 });
 
+
+const jetBrainsMono = JetBrains_Mono({
+  variable: '--font-jetbrains-mono',
+  subsets: ['latin'],
+});
+
 export const metadata = {
   title: 'Prompt Gallery',
   description: '',
@@ -20,15 +26,16 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html data-theme='light'
+    <html
+      data-theme="light"
       lang="en"
-      className={`${outfitfonts.variable} ${inter.variable} h-full antialiased`}
+      className={`${outfitfonts.variable} ${jetBrainsMono.variable} ${inter.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
         <main>
           <Navbar></Navbar>
           {children}
-        <Footer></Footer>
+          <Footer></Footer>
         </main>
         <Analytics />
       </body>

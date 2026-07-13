@@ -11,11 +11,11 @@ import BackButton from './BackButton';
 const PhotoDetails = ({ photo, backLink }) => {
   
   return (
-    <section className="container mx-auto px-4 py-8 lg:py-14">
+    <section className="container mx-auto px-4 py-8 lg:py-14 font-inter">
       {/* Back Button */}
       <div>
         <BackButton></BackButton>
-     </div>
+      </div>
 
       <div className="grid grid-cols-1 gap-10 lg:grid-cols-[2fr_3fr] lg:gap-14">
         {/* Left */}
@@ -59,16 +59,17 @@ const PhotoDetails = ({ photo, backLink }) => {
           <div className="rounded-xl border p-5">
             <div className="mb-4 flex flex-wrap items-center justify-between gap-4 border-b pb-4">
               <div>
-                <h2 className="text-lg font-semibold">AI Prompt</h2>
-                <p className="text-sm text-default-500">
-                  Copy and use this prompt in your favorite AI image generator.
+                <h2 className="text-lg md:text-2xl font-semibold">AI Prompt</h2>
+                <p className="text-sm md:text-base text-default-500">
+                  Copy this prompt and use it in any AI image generator to
+                  create similar artwork.
                 </p>
               </div>
 
               <CopyPromptButton prompt={photo.prompt} />
             </div>
 
-            <div className="rounded-lg bg-default-100 p-2 text-sm leading-7">
+            <div className="rounded-lg font-jetbrains-mono  bg-default-100 p-2 text-sm md:text-base leading-6 lg:leading-7">
               {photo.prompt}
             </div>
           </div>
