@@ -49,10 +49,10 @@ const PhotoDetails = ({ photo, backLink }) => {
             {photo.category}
           </Badge>
 
-          <h1 className="text-3xl font-bold leading-tight sm:text-4xl lg:text-5xl">
+          <h1 className="text-3xl font-bold leading-tight lg:text-4xl">
             {photo.title}
           </h1>
-
+l
           <p className="leading-8 text-default-600">{photo.description}</p>
 
           {/* Prompt */}
