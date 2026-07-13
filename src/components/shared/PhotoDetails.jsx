@@ -1,4 +1,3 @@
-
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -7,9 +6,7 @@ import { Download, ArrowLeft } from 'lucide-react';
 import CopyPromptButton from './CopyPrompt';
 import BackButton from './BackButton';
 
-
 const PhotoDetails = ({ photo, backLink }) => {
-  
   return (
     <section className="container mx-auto px-4 py-8 lg:py-14 font-inter">
       {/* Back Button */}
@@ -45,8 +42,6 @@ const PhotoDetails = ({ photo, backLink }) => {
 
         {/* Right */}
         <div className="flex flex-col justify-center space-y-6">
-          
-
           <h1 className="text-3xl font-bold leading-tight lg:text-4xl">
             {photo.title}
           </h1>
