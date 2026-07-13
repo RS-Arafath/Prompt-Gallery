@@ -52,7 +52,7 @@ const PhotoDetails = ({ photo, backLink }) => {
           <h1 className="text-3xl font-bold leading-tight lg:text-4xl">
             {photo.title}
           </h1>
-l
+
           <p className="leading-8 text-default-600">{photo.description}</p>
 
           {/* Prompt */}
