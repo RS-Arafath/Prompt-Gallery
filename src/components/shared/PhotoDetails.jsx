@@ -45,9 +45,7 @@ const PhotoDetails = ({ photo, backLink }) => {
 
         {/* Right */}
         <div className="flex flex-col justify-center space-y-6">
-          <Badge color="primary" variant="flat" className="w-fit">
-            {photo.category}
-          </Badge>
+          
 
           <h1 className="text-3xl font-bold leading-tight lg:text-4xl">
             {photo.title}
