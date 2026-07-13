@@ -21,6 +21,7 @@ const CopyPromptButton = ({ prompt }) => {
     <Button
       color={copied ? 'success' : 'primary'}
       variant="flat"
+      className='border'
       startContent={copied ? <Check size={18} /> : <Copy size={18} />}
       onPress={handleCopy}
     >
