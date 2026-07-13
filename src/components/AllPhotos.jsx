@@ -68,9 +68,9 @@ export const AllPhotos = async () => {
                 </div>
 
                 <div className="mt-5 flex justify-end ">
-                  <Button variant="outline" className="">
-                    Get Prompt
-                  </Button>
+                  <Link href={`/allPhotos/${item.id}`}>
+                    <Button variant="outline">Get Prompt</Button>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -79,7 +79,7 @@ export const AllPhotos = async () => {
       </section>
 
       <div className="flex justify-center mt-8">
-        <Button size='lg' >
+        <Button size="lg">
           <Link href="/allPhotos"> View All Photos</Link>
         </Button>
       </div>

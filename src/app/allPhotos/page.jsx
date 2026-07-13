@@ -69,9 +69,9 @@ const AllPhotosPage = async() => {
                 </div>
 
                 <div className="mt-5 flex justify-end ">
-                  <Button variant="outline" className="">
-                    Get Prompt
-                  </Button>
+                  <Link href={`/allPhotos/${item.id}`}>
+                    <Button variant="outline">Get Prompt</Button>
+                  </Link>
                 </div>
               </div>
             </div>

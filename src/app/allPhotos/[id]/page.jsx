@@ -1,6 +1,8 @@
 import React from 'react';
 
-const PhotoDetailsPage = () => {
+const PhotoDetailsPage = async({ params }) => {
+  const { id } = await params
+  console.log(id);
   return (
     <div>
       

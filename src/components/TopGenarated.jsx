@@ -4,6 +4,7 @@ import LikeButton from './shared/LikeButton';
 import { Button } from '@heroui/react';
 import fs from 'fs/promises';
 import path from 'path';
+import Link from 'next/link';
  export const TopGenerated = async () => {
   
 const filePath = path.join(process.cwd(), 'public', 'top-gen.json');
@@ -66,9 +67,9 @@ const data = JSON.parse(fileContents);
               </div>
 
               <div className="mt-5 flex justify-end ">
-                <Button variant="outline" className="">
-                  Get Prompt
-                </Button>
+                <Link href={`/topGenarated/${item.id}`}>
+                  <Button variant="outline">Get Prompt</Button>
+                </Link>
               </div>
             </div>
           </div>
