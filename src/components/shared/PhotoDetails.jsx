@@ -17,7 +17,7 @@ const PhotoDetails = ({ photo, backLink }) => {
         <BackButton></BackButton>
       </div>
 
-      <div className="grid grid-cols-1 gap-10 lg:grid-cols-[2fr_3fr] lg:gap-14">
+      <div className="grid  grid-cols-1 gap-10 lg:grid-cols-[2fr_3fr] lg:gap-14">
         {/* Left */}
         <div className="group relative aspect-square overflow-hidden rounded-2xl border bg-black shadow-lg">
           {/* Blurred Background */}
@@ -39,7 +39,7 @@ const PhotoDetails = ({ photo, backLink }) => {
             width={900}
             height={900}
             priority
-            className="relative z-10 h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+            className="relative cursor-pointer z-10 h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
           />
         </div>
 
