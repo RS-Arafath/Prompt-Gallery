@@ -9,7 +9,7 @@ const BackButton = () => {
   return (
     <button
       onClick={() => router.back()}
-      className="mb-8 inline-flex border rounded-4xl p-2 items-center gap-2 text-sm text-gray-600 transition hover:text-black dark:text-gray-300 dark:hover:text-white"
+      className="mb-8 inline-flex cursor-pointer items-center gap-2 text-sm text-gray-600 transition hover:text-black dark:text-gray-300 dark:hover:text-white"
     >
       <ArrowLeft size={18} />
       Back to Gallery
