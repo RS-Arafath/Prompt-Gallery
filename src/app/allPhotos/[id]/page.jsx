@@ -2,7 +2,7 @@ import React from 'react';
 
 const PhotoDetailsPage = async({ params }) => {
   const { id } = await params
-  console.log(id);
+  //console.log(id);
   return (
     <div>
       
