@@ -17,7 +17,7 @@ const images = [
 
 const Banner = () => {
   return (
-    <section className="relative h-[90vh] overflow-hidden  mb-10">
+    <section className="relative mb-5 md:mb-10 h-[60vh] overflow-hidden sm:h-[70vh] md:h-[80vh] lg:h-[90vh]">
       <Swiper
         modules={[Autoplay]}
         loop
@@ -38,7 +38,8 @@ const Banner = () => {
                 <div className="w-full px-5 sm:px-8 lg:px-12 xl:px-16">
                   <div className="text-left text-white">
                     <h1 className="font-bold leading-tight text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-outfit">
-                      Turn Ideas into <br></br> Stunning <span className='text-purple-700'>AI Art</span>
+                      Turn Ideas into <br></br> Stunning{' '}
+                      <span className="text-purple-700">AI Art</span>
                     </h1>
 
                     <p className="mt-4 max-w-2xl text-sm leading-7 text-gray-200 sm:text-base md:text-lg lg:mt-6 lg:text-xl xl:text-2xl font-outfit">
@@ -53,11 +54,9 @@ const Banner = () => {
                           size="lg"
                           className="px-6 py-6 text-base lg:px-8 lg:text-lg"
                         >
-                        Explore Now
+                          Explore Now
                         </Button>
                       </Link>
-
-                     
                     </div>
                   </div>
                 </div>
