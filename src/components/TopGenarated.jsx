@@ -16,7 +16,7 @@ const data = JSON.parse(fileContents);
     <section className="container mx-auto px-4 py-12 font-inter">
       <div className="mb-8">
         <h2 className="text-2xl  md:text-4xl lg:text-5xl  font-bold">
-          Top Generated Images
+          Top Generated Image
         </h2>
         <p className="mt-2 text-gray-500">
           Discover the most popular AI-generated artworks.
