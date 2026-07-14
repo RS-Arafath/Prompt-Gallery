@@ -12,7 +12,7 @@ const BackButton = () => {
       className="mb-8 inline-flex cursor-pointer items-center gap-2 text-sm text-gray-600 transition hover:text-black dark:text-gray-300 dark:hover:text-white"
     >
       <ArrowLeft size={18} />
-      Back to Galler
+      Back to Gallery
     </button>
   );
 };
