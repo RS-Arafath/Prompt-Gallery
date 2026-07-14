@@ -5,7 +5,7 @@ import { Button } from '@heroui/react';
 import { Copy, Check } from 'lucide-react';
 
 const CopyPromptButton = ({ prompt }) => {
-  const [copied, setCopied] = useState(fale);
+  const [copied, setCopied] = useState(false);
 
   const handleCopy = async () => {
     await navigator.clipboard.writeText(prompt);
