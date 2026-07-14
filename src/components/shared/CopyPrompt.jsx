@@ -14,7 +14,7 @@ const CopyPromptButton = ({ prompt }) => {
 
     setTimeout(() => {
       setCopied(false);
-    }, 200);
+    }, 2000);
   };
 
   return (
