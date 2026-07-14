@@ -19,7 +19,7 @@ const data = JSON.parse(fileContents);
           Top Generated Images
         </h2>
         <p className="mt-2 text-gray-500">
-          Discover the most popular AI-generated artworks.
+          Discover the most popular AI-generated artworks
         </p>
       </div>
 
