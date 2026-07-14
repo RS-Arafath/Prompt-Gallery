@@ -4,7 +4,7 @@ import LikeButton from './shared/LikeButton';
 import { Button } from '@heroui/react';
 import fs from 'fs/promises';
 import path from 'path';
-import Link from 'next/link'
+import Link from 'next/link';
  export const TopGenerated = async () => {
   
 const filePath = path.join(process.cwd(), 'public', 'top-gen.json');
