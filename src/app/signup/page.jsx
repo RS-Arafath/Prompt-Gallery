@@ -1,7 +1,7 @@
-'use client'
+'use client';
 import { Check } from '@gravity-ui/icons';
 import toast from 'react-hot-toast';
-
+import { useRef } from 'react';
 
 import { useRouter } from 'next/navigation';
 import {
@@ -15,34 +15,36 @@ import {
 } from '@heroui/react';
 import Link from 'next/link';
 import { redirect } from 'next/navigation';
+import { authClient } from '@/lib/auth-client';
 
 const SignUpPage = () => {
+  const formRef = useRef(null);
   const router = useRouter();
   const onSubmit = async (e) => {
     e.preventDefault();
 
     const formData = new FormData(e.currentTarget);
-
     const data = {};
-
     formData.forEach((value, key) => {
       data[key] = value.toString();
     });
 
     try {
-     
-      const success = true; 
+      const { data: userData, error } = await authClient.signUp.email({
+        name: data.name,
+        email: data.email,
+        password: data.password,
+      });
 
-      if (!success) {
-        throw new Error('Invalid email or password');
+      if (error) {
+        throw new Error(error.message || 'Sign Up Failed!');
       }
 
       toast.success('Sign Up Successfully!');
-
-      e.currentTarget.reset();
-
+   
+formRef.current?.reset();
       setTimeout(() => {
-       router.push('/signin');
+        router.push('/signin');
       }, 1500);
     } catch (error) {
       toast.error(error.message || 'Sign Up Failed!');
@@ -60,7 +62,7 @@ const SignUpPage = () => {
           </p>
         </div>
 
-        <Form className="flex flex-col gap-5" onSubmit={onSubmit}>
+        <Form ref={formRef} className="flex flex-col gap-5" onSubmit={onSubmit}>
           <TextField
             isRequired
             name="name"
@@ -158,7 +160,5 @@ const SignUpPage = () => {
     </div>
   );
 };
-
-
 
 export default SignUpPage;

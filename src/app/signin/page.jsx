@@ -13,40 +13,43 @@ import {
 import Link from 'next/link';
 import { redirect } from 'next/navigation';
 import { useRouter } from 'next/navigation';
+import { authClient } from '@/lib/auth-client';
+
 const SignInPage = () => {
   const router = useRouter();
- const onSubmit = async (e) => {
-   e.preventDefault();
 
-   const formData = new FormData(e.currentTarget);
+const onSubmit = async (e) => {
+  e.preventDefault();
 
-   const data = {};
+  const formData = new FormData(e.currentTarget);
+  const data = {};
+  formData.forEach((value, key) => {
+    data[key] = value.toString();
+  });
 
-   formData.forEach((value, key) => {
-     data[key] = value.toString();
-   });
+  try {
+    const { data: userData, error } = await authClient.signIn.email({
+    
+      email: data.email,
+      password: data.password,
+   
+    });
 
-   try {
+    if (error) {
+      throw new Error(error.message || 'Sign In Failed!');
+    }
+
+    toast.success('Sign In Successfully!');
   
 
-     const success = true;
-
-     if (!success) {
-       throw new Error('Invalid email or password');
-     }
-
-     toast.success('Sign In Successfully!');
-
-     e.currentTarget.reset();
-
-     setTimeout(() => {
+    setTimeout(() => {
       router.push('/');
-     }, 1500);
-   } catch (error) {
-     toast.error(error.message || 'Sign In Failed!');
-   }
-   console.log(data);
- };
+    }, 1500);
+  } catch (error) {
+    toast.error(error.message || 'Sign In Failed!');
+  }
+   Form.reset();
+};
   return (
     <div className="flex min-h-screen items-center justify-center bg-gray-50 px-4 py-12">
       <div className="w-full max-w-sm md:max-w-md rounded-2xl border border-gray-200 bg-white p-6 shadow-sm sm:p-8">
