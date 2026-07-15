@@ -30,11 +30,13 @@ export default function Navbar() {
           <Image
             src="/images/logo.png"
             alt="Logo"
-             width={56}
-                height={56}
-                className="h-14 w-14 object-contain dark:brightness-200"
+            width={56}
+            height={56}
+            className="h-14 w-14 object-contain dark:brightness-200"
           />
-          <h2 className="text-lg md:text-xl font-outfit font-bold">Prompt Gallery</h2>
+          <h2 className="text-lg md:text-xl font-outfit font-bold">
+            Prompt Gallery
+          </h2>
         </Link>
 
         {/* Desktop Menu */}
@@ -67,9 +69,12 @@ export default function Navbar() {
         {/* Desktop Buttons */}
         <div className="hidden md:flex gap-3">
           <Button variant="bordered" className="border hover:bg-gray-100">
-            Sign Up
+            <Link href="/signup">Sign Up</Link>
           </Button>
-          <Button color="primary">Sign In</Button>
+          <Button color="primary">
+            {' '}
+            <Link href="/signin">Sign In</Link>
+          </Button>
         </div>
 
         <button className="md:hidden" onClick={() => setOpen(!open)}>
@@ -101,11 +106,11 @@ export default function Navbar() {
 
           <div className="pt-4 flex flex-col gap-3">
             <Button variant="bordered" className="border" fullWidth>
-              Sign Up
+              <Link href="/signup">Sign Up</Link>
             </Button>
 
             <Button color="primary" fullWidth>
-              Sign In
+              <Link href="/signin">Sign In</Link>
             </Button>
           </div>
         </div>

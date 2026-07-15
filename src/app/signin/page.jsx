@@ -1,0 +1,126 @@
+'use client';
+import { Check } from '@gravity-ui/icons';
+import {
+  Button,
+  Description,
+  FieldError,
+  Form,
+  Input,
+  Label,
+  TextField,
+} from '@heroui/react';
+import Link from 'next/link';
+
+const SignInPage = () => {
+  const onSubmit = (e) => {
+    e.preventDefault();
+    const formData = new FormData(e.currentTarget);
+    const data = {};
+    formData.forEach((value, key) => {
+      data[key] = value.toString();
+    });
+    alert(`Form submitted with: ${JSON.stringify(data, null, 2)}`);
+    e.currentTarget.reset();
+    console.log(data);
+  };
+  return (
+    <div className="flex min-h-screen items-center justify-center bg-gray-50 px-4 py-12">
+      <div className="w-full max-w-sm md:max-w-md rounded-2xl border border-gray-200 bg-white p-6 shadow-sm sm:p-8">
+        <div className="mb-6 text-center">
+          <h1 className="text-xl md:text-3xl font-semibold text-gray-900">
+            Sign in
+          </h1>
+          <p className="mt-1 text-sm md:text-base text-gray-500">
+            Enter your details to access your account
+          </p>
+        </div>
+
+        <Form className="flex flex-col gap-5" onSubmit={onSubmit}>
+          <TextField
+            isRequired
+            name="email"
+            type="email"
+            className="flex flex-col gap-1.5"
+            validate={(value) => {
+              if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(value)) {
+                return 'Please enter a valid email address';
+              }
+              return null;
+            }}
+          >
+            <Label className="text-sm md:text-base font-medium text-gray-700">
+              Email
+            </Label>
+            <Input
+              placeholder="example@gmail.com"
+              className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm text-gray-900 outline-none transition-colors focus:border-gray-900 focus:ring-1 focus:ring-gray-900"
+            />
+            <FieldError className="text-xs text-red-600" />
+          </TextField>
+          <TextField
+            isRequired
+            minLength={8}
+            name="password"
+            type="password"
+            className="flex flex-col gap-1.5"
+            validate={(value) => {
+              if (value.length < 8) {
+                return 'Password must be at least 8 characters';
+              }
+              if (!/[A-Z]/.test(value)) {
+                return 'Password must contain at least one uppercase letter';
+              }
+              if (!/[0-9]/.test(value)) {
+                return 'Password must contain at least one number';
+              }
+              return null;
+            }}
+          >
+            <Label className="text-sm md:text-base font-medium text-gray-700">
+              Password
+            </Label>
+            <Input
+              placeholder="Enter your password"
+              className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm text-gray-900 outline-none transition-colors focus:border-gray-900 focus:ring-1 focus:ring-gray-900"
+            />
+            <Description className="text-xs text-gray-500">
+              Must be at least 8 characters with 1 uppercase and 1 number
+            </Description>
+            <FieldError className="text-xs text-red-600" />
+          </TextField>
+          <div className="mt-2 flex  gap-2 sm:flex-row">
+            <Button
+              type="reset"
+              variant="secondary"
+              className="flex-1 rounded-lg border border-gray-300 px-4 py-2 text-sm font-medium text-gray-700 transition-colors hover:bg-gray-50"
+            >
+              Reset
+            </Button>
+            <Button
+              type="submit"
+              className="flex flex-1 items-center justify-center gap-1.5 rounded-lg bg-gray-900 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-gray-800"
+            >
+              <Check className="h-4 w-4" />
+              Submit
+            </Button>
+          </div>
+
+          <div className="mb-6 text-center sm:mb-8">
+            <h2 className="text-sm font-semibold text-gray-900 sm:text-base">
+              <Button variant="bordered" className='border'> Create new account</Button>
+            </h2>
+
+            <Link
+              href="/register"
+              className="mt-4 inline-flex items-center justify-center rounded-lg bg-gray-900 px-5 py-2.5 text-sm font-medium text-white transition-colors hover:bg-gray-800"
+            >
+              Register now
+            </Link>
+          </div>
+        </Form>
+      </div>
+    </div>
+  );
+};
+
+export default SignInPage;
