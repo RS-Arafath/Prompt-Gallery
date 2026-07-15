@@ -105,17 +105,16 @@ const SignInPage = () => {
             </Button>
           </div>
 
-          <div className="mb-6 text-center sm:mb-8">
-            <h2 className="text-sm font-semibold text-gray-900 sm:text-base">
-              <Button variant="bordered" className='border'> Create new account</Button>
+          <div className="my-6 text-center sm:my-8 w-full">
+            <h2 className="text-sm font-semibold text-gray-900 sm:text-base ">
+              <Button
+                variant="bordered"
+                className="border w-full hover:bg-gray-100"
+              >
+                {' '}
+                <Link href="/signup">Create new account</Link>
+              </Button>
             </h2>
-
-            <Link
-              href="/register"
-              className="mt-4 inline-flex items-center justify-center rounded-lg bg-gray-900 px-5 py-2.5 text-sm font-medium text-white transition-colors hover:bg-gray-800"
-            >
-              Register now
-            </Link>
           </div>
         </Form>
       </div>
