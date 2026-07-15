@@ -1,4 +1,4 @@
-'use client';
+'use client'
 import { Check } from '@gravity-ui/icons';
 import {
   Button,
@@ -11,7 +11,7 @@ import {
 } from '@heroui/react';
 import Link from 'next/link';
 
-const SignInPage = () => {
+const SignUpPage = () => {
   const onSubmit = (e) => {
     e.preventDefault();
     const formData = new FormData(e.currentTarget);
@@ -19,7 +19,7 @@ const SignInPage = () => {
     formData.forEach((value, key) => {
       data[key] = value.toString();
     });
-    alert(`Form submitted with: ${JSON.stringify(data, null, 2)}`);
+
     e.currentTarget.reset();
     console.log(data);
   };
@@ -28,14 +28,29 @@ const SignInPage = () => {
       <div className="w-full max-w-sm md:max-w-md rounded-2xl border border-gray-200 bg-white p-6 shadow-sm sm:p-8">
         <div className="mb-6 text-center">
           <h1 className="text-xl md:text-3xl font-semibold text-gray-900">
-            Sign in
+            Sign Up
           </h1>
           <p className="mt-1 text-sm md:text-base text-gray-500">
-            Enter your details to access your account
+            Create your account to get started
           </p>
         </div>
 
         <Form className="flex flex-col gap-5" onSubmit={onSubmit}>
+          <TextField
+            isRequired
+            name="name"
+            type="text"
+            className="flex flex-col gap-1.5"
+          >
+            <Label className="text-sm md:text-base font-medium text-gray-700">
+              Name
+            </Label>
+            <Input
+              placeholder="Enter Your Name"
+              className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm text-gray-900 outline-none transition-colors focus:border-gray-900 focus:ring-1 focus:ring-gray-900"
+            />
+            <FieldError className="text-xs text-red-600" />
+          </TextField>
           <TextField
             isRequired
             name="email"
@@ -107,10 +122,10 @@ const SignInPage = () => {
 
           <div className="my-6 w-full text-center sm:my-8">
             <Link
-              href="/signup"
+              href="/signin"
               className="inline-flex w-full items-center justify-center rounded-full border border-gray-300 px-4 py-2 text-sm font-semibold text-gray-900 transition-colors duration-200 hover:border-blue-400 hover:bg-gray-100 sm:text-base"
             >
-              Create new account
+              I already have an account
             </Link>
           </div>
         </Form>
@@ -119,4 +134,6 @@ const SignInPage = () => {
   );
 };
 
-export default SignInPage;
+
+
+export default SignUpPage;
