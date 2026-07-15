@@ -1,5 +1,9 @@
 'use client'
 import { Check } from '@gravity-ui/icons';
+import toast from 'react-hot-toast';
+
+
+import { useRouter } from 'next/navigation';
 import {
   Button,
   Description,
@@ -10,18 +14,39 @@ import {
   TextField,
 } from '@heroui/react';
 import Link from 'next/link';
+import { redirect } from 'next/navigation';
 
 const SignUpPage = () => {
-  const onSubmit = (e) => {
+  const router = useRouter();
+  const onSubmit = async (e) => {
     e.preventDefault();
+
     const formData = new FormData(e.currentTarget);
+
     const data = {};
+
     formData.forEach((value, key) => {
       data[key] = value.toString();
     });
 
-    e.currentTarget.reset();
-    console.log(data);
+    try {
+     
+      const success = true; 
+
+      if (!success) {
+        throw new Error('Invalid email or password');
+      }
+
+      toast.success('Sign Up Successfully!');
+
+      e.currentTarget.reset();
+
+      setTimeout(() => {
+       router.push('/signin');
+      }, 1500);
+    } catch (error) {
+      toast.error(error.message || 'Sign Up Failed!');
+    }
   };
   return (
     <div className="flex min-h-screen items-center justify-center bg-gray-50 px-4 py-12">

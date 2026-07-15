@@ -1,4 +1,5 @@
 'use client';
+import toast from 'react-hot-toast';
 import { Check } from '@gravity-ui/icons';
 import {
   Button,
@@ -10,19 +11,42 @@ import {
   TextField,
 } from '@heroui/react';
 import Link from 'next/link';
-
+import { redirect } from 'next/navigation';
+import { useRouter } from 'next/navigation';
 const SignInPage = () => {
-  const onSubmit = (e) => {
-    e.preventDefault();
-    const formData = new FormData(e.currentTarget);
-    const data = {};
-    formData.forEach((value, key) => {
-      data[key] = value.toString();
-    });
-    alert(`Form submitted with: ${JSON.stringify(data, null, 2)}`);
-    e.currentTarget.reset();
-    console.log(data);
-  };
+  const router = useRouter();
+ const onSubmit = async (e) => {
+   e.preventDefault();
+
+   const formData = new FormData(e.currentTarget);
+
+   const data = {};
+
+   formData.forEach((value, key) => {
+     data[key] = value.toString();
+   });
+
+   try {
+  
+
+     const success = true;
+
+     if (!success) {
+       throw new Error('Invalid email or password');
+     }
+
+     toast.success('Sign In Successfully!');
+
+     e.currentTarget.reset();
+
+     setTimeout(() => {
+      router.push('/');
+     }, 1500);
+   } catch (error) {
+     toast.error(error.message || 'Sign In Failed!');
+   }
+   console.log(data);
+ };
   return (
     <div className="flex min-h-screen items-center justify-center bg-gray-50 px-4 py-12">
       <div className="w-full max-w-sm md:max-w-md rounded-2xl border border-gray-200 bg-white p-6 shadow-sm sm:p-8">

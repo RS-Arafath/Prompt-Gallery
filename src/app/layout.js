@@ -3,6 +3,7 @@ import './globals.css';
 import { Analytics } from '@vercel/analytics/react';
 import Navbar from '@/components/shared/Navbar';
 import Footer from '@/components/shared/Footer';
+import { Toaster } from 'react-hot-toast';
 const outfitfonts = Outfit({
   variable: '--font-outfit',
   subsets: ['latin'],
@@ -35,6 +36,7 @@ export default function RootLayout({ children }) {
         <main>
           <Navbar></Navbar>
           {children}
+          <Toaster position="top-center" reverseOrder={false} />
           <Footer></Footer>
         </main>
         <Analytics />
