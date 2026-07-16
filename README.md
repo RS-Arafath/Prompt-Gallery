@@ -1,4 +1,4 @@
-{
+<!-- {
   "images": [
     {
       "id": 1,
@@ -404,4 +404,4 @@
     { "id": 8, "name": "Minimal", "slug": "minimal" },
     { "id": 9, "name": "Steampunk", "slug": "steampunk" }
   ]
-}
+} -->
