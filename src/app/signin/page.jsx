@@ -46,7 +46,7 @@ const onSubmit = async (e) => {
 formRef.current?.reset();
     setTimeout(() => {
       router.push('/');
-    }, 1500);
+    }, 1000);
   } catch (error) {
     toast.error(error.message || 'Sign In Failed!');
   }

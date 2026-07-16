@@ -44,7 +44,7 @@ const SignUpPage = () => {
       formRef.current?.reset();
       setTimeout(() => {
         router.push('/signin')
-      }, 1500);
+      }, 1000);
     } catch (error) {
       toast.error(error.message || 'Sign Up Failed!');
     }
