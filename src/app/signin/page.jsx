@@ -1,5 +1,6 @@
 'use client';
 import toast from 'react-hot-toast';
+import { useRef } from 'react';
 import { Check } from '@gravity-ui/icons';
 import {
   Button,
@@ -16,6 +17,7 @@ import { useRouter } from 'next/navigation';
 import { authClient } from '@/lib/auth-client';
 
 const SignInPage = () => {
+  const formRef = useRef(null);
   const router = useRouter();
 
 const onSubmit = async (e) => {
@@ -41,14 +43,14 @@ const onSubmit = async (e) => {
 
     toast.success('Sign In Successfully!');
   
-
+formRef.current?.reset();
     setTimeout(() => {
       router.push('/');
     }, 1500);
   } catch (error) {
     toast.error(error.message || 'Sign In Failed!');
   }
-   Form.reset();
+   
 };
   return (
     <div className="flex min-h-screen items-center justify-center bg-gray-50 px-4 py-12">
