@@ -43,7 +43,6 @@ const SignInPage = () => {
       if (error) {
         throw new Error(error.message || 'Sign In Failed!');
       }
-
       toast.success('Sign In Successfully!');
       formRef.current?.reset();
       setTimeout(() => {
