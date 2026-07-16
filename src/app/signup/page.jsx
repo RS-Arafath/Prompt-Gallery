@@ -22,7 +22,6 @@ const SignUpPage = () => {
   const router = useRouter();
   const onSubmit = async (e) => {
     e.preventDefault();
-
     const formData = new FormData(e.currentTarget);
     const data = {};
     formData.forEach((value, key) => {
@@ -42,7 +41,7 @@ const SignUpPage = () => {
 
       toast.success('Sign Up Successfully!');
    
-formRef.current?.reset();
+      formRef.current?.reset();
       setTimeout(() => {
         router.push('/signin');
       }, 1500);
