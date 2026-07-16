@@ -48,7 +48,7 @@ formRef.current?.reset();
       router.push('/');
     }, 1000);
   } catch (error) {
-    toast.error(error.message || 'Sign In Failed!');
+    toast.error('Sign In Failed!');
   }
    
 };
