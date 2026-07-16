@@ -1,6 +1,6 @@
 'use client';
 import toast from 'react-hot-toast';
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import { Check } from '@gravity-ui/icons';
 import {
   Button,
@@ -17,41 +17,45 @@ import { useRouter } from 'next/navigation';
 import { authClient } from '@/lib/auth-client';
 
 const SignInPage = () => {
+  const [isLoading, setIsLoading] = useState(false);
   const formRef = useRef(null);
   const router = useRouter();
 
-const onSubmit = async (e) => {
-  e.preventDefault();
+  const onSubmit = async (e) => {
+    e.preventDefault();
 
-  const formData = new FormData(e.currentTarget);
-  const data = {};
-  formData.forEach((value, key) => {
-    data[key] = value.toString();
-  });
-
-  try {
-    const { data: userData, error } = await authClient.signIn.email({
-    
-      email: data.email,
-      password: data.password,
-   
+    const formData = new FormData(e.currentTarget);
+    const data = {};
+    formData.forEach((value, key) => {
+      data[key] = value.toString();
     });
 
-    if (error) {
-      throw new Error(error.message || 'Sign In Failed!');
-    }
+    setIsLoading(true);
 
-    toast.success('Sign In Successfully!');
-  
-formRef.current?.reset();
-    setTimeout(() => {
-      router.push('/');
-    }, 1000);
-  } catch (error) {
-    toast.error('Sign In Failed!');
-  }
-   
-};
+    try {
+      const { data: userData, error } = await authClient.signIn.email({
+        email: data.email,
+        password: data.password,
+      });
+
+      //console.log({ userData, error });
+
+      if (error) {
+        throw new Error(error.message || 'Sign In Failed!');
+      }
+
+      toast.success('Sign In Successfully!');
+      formRef.current?.reset();
+      setTimeout(() => {
+        router.push('/');
+      }, 1500);
+    } catch (error) {
+     
+      toast.error(error.message || 'Sign In Failed!');
+    } finally {
+      setIsLoading(false);
+    }
+  };
   return (
     <div className="flex min-h-screen items-center justify-center bg-gray-50 px-4 py-12">
       <div className="w-full max-w-sm md:max-w-md rounded-2xl border border-gray-200 bg-white p-6 shadow-sm sm:p-8">
@@ -127,10 +131,38 @@ formRef.current?.reset();
             </Button>
             <Button
               type="submit"
-              className="flex flex-1 items-center justify-center gap-1.5 rounded-lg bg-gray-900 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-gray-800"
+              isDisabled={isLoading}
+              className="flex flex-1 items-center justify-center gap-1.5 rounded-lg bg-gray-900 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-gray-800 disabled:opacity-60 disabled:cursor-not-allowed"
             >
-              <Check className="h-4 w-4" />
-              Submit
+              {isLoading ? (
+                <>
+                  <svg
+                    className="h-4 w-4 animate-spin"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                  >
+                    <circle
+                      className="opacity-25"
+                      cx="12"
+                      cy="12"
+                      r="10"
+                      stroke="currentColor"
+                      strokeWidth="4"
+                    />
+                    <path
+                      className="opacity-75"
+                      fill="currentColor"
+                      d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"
+                    />
+                  </svg>
+                  Signing In...
+                </>
+              ) : (
+                <>
+                  <Check className="h-4 w-4" />
+                  Submit
+                </>
+              )}
             </Button>
           </div>
 
