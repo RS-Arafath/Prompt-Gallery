@@ -1,24 +1,31 @@
 'use client';
+import { User } from 'lucide-react';
 
 import { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Button } from '@heroui/react';
+import { Avatar, Button } from '@heroui/react';
 import { Menu, X } from 'lucide-react';
+import { authClient } from '@/lib/auth-client';
 
 const navLinks = [
   { href: '/', label: 'Home' },
-
   { href: '/topGenarated', label: 'Top Genarated' },
   { href: '/allPhotos', label: 'All Photos' },
   { href: '/profile', label: 'Profile' },
 ];
 
 export default function Navbar() {
+  const userData = authClient.useSession();
+  const user = userData.data?.user;
+  //console.log(user);
+  const isPending = userData.isPending;
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
-
+  const handleSignOut = async () => {
+    await authClient.signOut();
+  };
   return (
     <header className="border-b bg-white">
       <nav className="max-w-7xl mx-auto h-16 px-4 sm:px-6 lg:px-8 flex items-center justify-between">
@@ -68,13 +75,42 @@ export default function Navbar() {
 
         {/* Desktop Buttons */}
         <div className="hidden md:flex gap-3">
-          <Button variant="bordered" className="border hover:bg-gray-100">
-            <Link href="/signup">Sign Up</Link>
-          </Button>
-          <Button color="primary">
-            {' '}
-            <Link href="/signin">Sign In</Link>
-          </Button>
+          {isPending ? (
+            <div className="flex items-center justify-center h-8 w-8">
+              <div className="h-6 w-6 animate-spin rounded-full border-2 border-gray-200 border-t-red-600" />
+            </div>
+          ) : (
+            !user && (
+              <div className=" flex gap-3">
+                <Button variant="bordered" className="border hover:bg-gray-100">
+                  <Link href="/signup">Sign Up</Link>
+                </Button>
+                <Button color="primary">
+                  {' '}
+                  <Link href="/signin">Sign In</Link>
+                </Button>
+              </div>
+            )
+          )}
+          {user && (
+            <div className="flex justify-center items-center gap-2">
+              <Avatar>
+                <Avatar.Image
+                  alt={user.name}
+                  src={user?.image}
+                  referrerPolicy="no-referrer"
+                />
+                <Avatar.Fallback>{user.name.charAt(0)}</Avatar.Fallback>
+              </Avatar>
+              <Button
+                onClick={handleSignOut}
+                variant="bordered"
+                className="border hover:border-red-700 duration-200 transition-colors text-base hover:bg-red-100"
+              >
+                <Link href="/">Log Out</Link>
+              </Button>
+            </div>
+          )}
         </div>
 
         <button className="md:hidden" onClick={() => setOpen(!open)}>
@@ -105,13 +141,47 @@ export default function Navbar() {
           ))}
 
           <div className="pt-4 flex flex-col gap-3">
-            <Button variant="bordered" className="border" fullWidth>
-              <Link href="/signup">Sign Up</Link>
-            </Button>
+            {isPending ? (
+              <div className="flex items-center justify-center h-8 w-8">
+                <div className="h-6 w-6 animate-spin rounded-full border-2 border-gray-200 border-t-red-600" />
+              </div>
+            ) : (
+              !user && (
+                <div className=" flex gap-3">
+                  <Button variant="bordered" className="border" fullWidth>
+                    <Link href="/signup">Sign Up</Link>
+                  </Button>
 
-            <Button color="primary" fullWidth>
-              <Link href="/signin">Sign In</Link>
-            </Button>
+                  <Button color="primary" fullWidth>
+                    <Link href="/signin">Sign In</Link>
+                  </Button>
+                </div>
+              )
+            )}
+            {user && (
+              <div className="flex justify-start items-center gap-2">
+                <Button
+                  onClick={handleSignOut}
+                  variant="bordered"
+                  className="border hover:border-red-700 duration-200 transition-colors text-base hover:bg-red-100"
+                >
+                  <Link href="/">Log Out</Link>
+                </Button>
+                <Avatar>
+                  {user?.image ? (
+                    <Avatar.Image
+                      alt={user.name}
+                      src={user.image}
+                      referrerPolicy="no-referrer"
+                    />
+                  ) : (
+                    <Avatar.Fallback>
+                      <User className="h-5 w-5 text-gray-500" />
+                    </Avatar.Fallback>
+                  )}
+                </Avatar>
+              </div>
+            )}
           </div>
         </div>
       </div>
