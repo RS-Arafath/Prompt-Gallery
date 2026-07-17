@@ -1,4 +1,5 @@
 'use client';
+import { Icon } from '@iconify/react';
 import toast from 'react-hot-toast';
 import { useRef, useState } from 'react';
 import { Check } from '@gravity-ui/icons';
@@ -49,17 +50,22 @@ const SignInPage = () => {
         router.push('/');
       }, 1500);
     } catch (error) {
-     
       toast.error(error.message || 'Sign In Failed!');
     } finally {
       setIsLoading(false);
     }
   };
+  /* google signin */
+  const googleSignIn = async () => {
+    await authClient.signIn.social({
+      provider: 'google',
+    });
+  };
   return (
     <div className="flex min-h-screen items-center justify-center bg-gray-50 px-4 py-12">
       <div className="w-full max-w-sm md:max-w-md rounded-2xl border border-gray-200 bg-white p-6 shadow-sm sm:p-8">
         <div className="mb-6 text-center">
-          <h1 className="text-xl md:text-3xl font-semibold text-gray-900">
+          <h1 className="text-2xl md:text-3xl font-bold text-gray-900">
             Sign in
           </h1>
           <p className="mt-1 text-sm md:text-base text-gray-500">
@@ -165,13 +171,28 @@ const SignInPage = () => {
             </Button>
           </div>
 
-          <div className="my-6 w-full text-center sm:my-8">
+          <div className=" w-full text-center my-4 sm:my-5">
             <Link
               href="/signup"
               className="inline-flex w-full items-center justify-center rounded-full border border-gray-300 px-4 py-2 text-sm font-semibold text-gray-900 transition-colors duration-200 hover:border-blue-400 hover:bg-gray-100 sm:text-base"
             >
               Create new account
             </Link>
+          </div>
+          <div className="flex items-center w-full">
+            <div className="grow border-t border-gray-300"></div>
+            <span className="mx-4 text-gray-500 text-sm">Or</span>
+            <div className="grow border-t border-gray-300"></div>
+          </div>
+          <div>
+            <Button
+              onClick={googleSignIn}
+              className="w-full "
+              variant="tertiary"
+            >
+              <Icon icon="devicon:google" />
+              Sign in with Google
+            </Button>
           </div>
         </Form>
       </div>

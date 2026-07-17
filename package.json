@@ -25,6 +25,7 @@
     "swiper": "^14.0.5"
   },
   "devDependencies": {
+    "@iconify/react": "^6.0.2",
     "@tailwindcss/postcss": "^4",
     "eslint": "^9",
     "eslint-config-next": "16.2.10",
