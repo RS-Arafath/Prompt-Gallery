@@ -95,7 +95,7 @@ export default function Navbar() {
           {user && (
             <div className="flex justify-center items-center gap-2">
               <Avatar
-                size="md"
+                size="sm"
                 className="ring-1 cursor-pointer ring-red-600 ring-offset-1"
               >
                 {user?.image ? (
@@ -168,7 +168,7 @@ export default function Navbar() {
             )}
             {user && (
               <div className="flex justify-start items-center gap-2">
-                <Button
+                <Button size='sm'
                   onClick={handleSignOut}
                   variant="bordered"
                   className="border border-red-700 duration-200 transition-colors text-base bg-red-200 hover:bg-red-300"
