@@ -94,18 +94,26 @@ export default function Navbar() {
           )}
           {user && (
             <div className="flex justify-center items-center gap-2">
-              <Avatar>
-                <Avatar.Image
-                  alt={user.name}
-                  src={user?.image}
-                  referrerPolicy="no-referrer"
-                />
-                <Avatar.Fallback>{user.name.charAt(0)}</Avatar.Fallback>
+              <Avatar
+                size="md"
+                className="ring-1 cursor-pointer ring-red-600 ring-offset-1"
+              >
+                {user?.image ? (
+                  <Avatar.Image
+                    alt={user.name}
+                    src={user.image}
+                    referrerPolicy="no-referrer"
+                  />
+                ) : (
+                  <Avatar.Fallback>
+                    <User className="h-5 w-5 text-gray-500" />
+                  </Avatar.Fallback>
+                )}
               </Avatar>
               <Button
                 onClick={handleSignOut}
                 variant="bordered"
-                className="border hover:border-red-700 duration-200 transition-colors text-base hover:bg-red-100"
+                className="border border-red-700 duration-200 transition-colors text-base bg-red-200 hover:bg-red-300"
               >
                 <Link href="/">Log Out</Link>
               </Button>
@@ -163,11 +171,14 @@ export default function Navbar() {
                 <Button
                   onClick={handleSignOut}
                   variant="bordered"
-                  className="border hover:border-red-700 duration-200 transition-colors text-base hover:bg-red-100"
+                  className="border border-red-700 duration-200 transition-colors text-base bg-red-200 hover:bg-red-300"
                 >
                   <Link href="/">Log Out</Link>
                 </Button>
-                <Avatar>
+                <Avatar
+                  size="md"
+                  className="ring-1 cursor-pointer ring-red-600 ring-offset-1"
+                >
                   {user?.image ? (
                     <Avatar.Image
                       alt={user.name}
