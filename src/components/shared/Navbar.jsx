@@ -1,6 +1,6 @@
 'use client';
 import { User } from 'lucide-react';
-
+import { LogOut } from 'lucide-react';
 import { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -94,26 +94,31 @@ export default function Navbar() {
           )}
           {user && (
             <div className="flex justify-center items-center gap-2">
+              {/* <span className="text-sm font-medium text-gray-700">
+                {user.name}
+              </span> */}
               <Avatar
                 size="sm"
-                className="ring-1 cursor-pointer ring-red-600 ring-offset-1"
+                className="ring-1 cursor-pointer ring-blue-600 ring-offset-1"
               >
                 {user?.image ? (
                   <Avatar.Image
                     alt={user.name}
                     src={user.image}
                     referrerPolicy="no-referrer"
+                   
                   />
                 ) : (
                   <Avatar.Fallback>
-                    <User className="h-5 w-5 text-gray-500" />
+                    <User className="h-5 w-5 text-blue-500" />
                   </Avatar.Fallback>
                 )}
               </Avatar>
               <Button
+                
                 onClick={handleSignOut}
                 variant="bordered"
-                className="border border-red-700 duration-200 transition-colors text-base bg-red-200 hover:bg-red-300"
+                className="border border-blue-700 duration-200 transition-colors text-base bg-blue-200 hover:bg-blue-300"
               >
                 <Link href="/">Log Out</Link>
               </Button>
@@ -168,16 +173,17 @@ export default function Navbar() {
             )}
             {user && (
               <div className="flex justify-start items-center gap-2">
-                <Button size='sm'
+                <Button
+                  size="sm"
                   onClick={handleSignOut}
                   variant="bordered"
-                  className="border border-red-700 duration-200 transition-colors text-base bg-red-200 hover:bg-red-300"
+                  className="rgb-border border border-blue-700 duration-200 transition-colors text-base bg-blue-200 hover:bg-blue-300"
                 >
                   <Link href="/">Log Out</Link>
                 </Button>
                 <Avatar
                   size="md"
-                  className="ring-1 cursor-pointer ring-red-600 ring-offset-1"
+                  className="ring-1 cursor-pointer ring-blue-600 ring-offset-1"
                 >
                   {user?.image ? (
                     <Avatar.Image

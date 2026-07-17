@@ -52,7 +52,7 @@ const Banner = () => {
                         <Button
                           color="primary"
                           size="lg"
-                          className="px-6 py-6 text-base lg:px-8 lg:text-lg"
+                          className=" px-6 py-6 text-base lg:px-8 lg:text-lg"
                         >
                           Explore Now
                         </Button>
