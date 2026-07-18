@@ -1,4 +1,5 @@
 'use client';
+import ProfileModal from '@/components/ProfileModal';
 import { authClient } from '@/lib/auth-client';
 import { Avatar, Button, Card } from '@heroui/react';
 import { User } from 'lucide-react';
@@ -75,9 +76,7 @@ const ProfilePage = () => {
           >
             <Link href="/">Log Out</Link>
           </Button>
-          <Button size="sm" variant="bordered" className='border hover:bg-gray-100'>
-            Update Information
-          </Button>
+         <ProfileModal></ProfileModal>
         </div>
       </Card>
     </Card>
