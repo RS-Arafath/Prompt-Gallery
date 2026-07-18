@@ -8,11 +8,12 @@ const onSubmit = async (e) => {
   e.preventDefault();
 
   const name = e.target.name.value;
-  const image = e.target.image.value;
+  //const image = e.target.image.value;
 
   const { data, error } = await authClient.updateUser({
     name,
-    image,
+    
+   
   });
 
   if (error) {
@@ -42,6 +43,7 @@ const onSubmit = async (e) => {
                 <Surface variant="default">
                   <form onSubmit={onSubmit} className="flex flex-col gap-4">
                     <TextField
+                      isRequired
                       className="w-full"
                       name="name"
                       type="text"
@@ -50,7 +52,7 @@ const onSubmit = async (e) => {
                       <Label>Name</Label>
                       <Input placeholder="Enter your name" />
                     </TextField>
-
+{/* 
                     <TextField
                       className="w-full"
                       name="image"
@@ -58,7 +60,7 @@ const onSubmit = async (e) => {
                     >
                       <Label>Image url</Label>
                       <Input placeholder="Enter your image url" />
-                    </TextField>
+                    </TextField> */}
                     <Modal.Footer>
                       <Button slot="close" variant="secondary">
                         Cancel
