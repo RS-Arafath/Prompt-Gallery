@@ -106,7 +106,6 @@ export default function Navbar() {
                     alt={user.name}
                     src={user.image}
                     referrerPolicy="no-referrer"
-                   
                   />
                 ) : (
                   <Avatar.Fallback>
@@ -114,14 +113,9 @@ export default function Navbar() {
                   </Avatar.Fallback>
                 )}
               </Avatar>
-              <Button
-                
-                onClick={handleSignOut}
-                variant="bordered"
-                className="border border-blue-700 duration-200 transition-colors text-base bg-blue-200 hover:bg-blue-300"
-              >
-                <Link href="/">Log Out</Link>
-              </Button>
+              <h1 className="text-lg md:text-xl font-semibold font-jetbrains-mono">
+                {user?.name}!
+              </h1>
             </div>
           )}
         </div>
@@ -173,16 +167,8 @@ export default function Navbar() {
             )}
             {user && (
               <div className="flex justify-start items-center gap-2">
-                <Button
-                  size="sm"
-                  onClick={handleSignOut}
-                  variant="bordered"
-                  className="rgb-border border border-blue-700 duration-200 transition-colors text-base bg-blue-200 hover:bg-blue-300"
-                >
-                  <Link href="/">Log Out</Link>
-                </Button>
                 <Avatar
-                  size="md"
+                  size="sm"
                   className="ring-1 cursor-pointer ring-blue-600 ring-offset-1"
                 >
                   {user?.image ? (
@@ -197,6 +183,9 @@ export default function Navbar() {
                     </Avatar.Fallback>
                   )}
                 </Avatar>
+                <h1 className="text-lg md:text-xl font-semibold font-jetbrains-mono">
+                  {user?.name}!
+                </h1>
               </div>
             )}
           </div>

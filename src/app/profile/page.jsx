@@ -4,7 +4,6 @@ import { Avatar, Button, Card } from '@heroui/react';
 import { User } from 'lucide-react';
 import Link from 'next/link';
 import React from 'react';
-
 const ProfilePage = () => {
   const userData = authClient.useSession();
   const user = userData.data?.user;
@@ -28,9 +27,11 @@ const ProfilePage = () => {
         <p className="text-center text-slate-600 text-lg">
           You are not signed in.
         </p>
-        <Button as={Link} href="/signin" color="primary">
+        <div>
+           <Button as={Link} href="/signin" color="primary">
          <Link href='/signin'>SignIn</Link>
         </Button>
+       </div>
       </Card>
     );
   }
@@ -65,14 +66,17 @@ const ProfilePage = () => {
             <h3 className="text-base text-gray-600">{user.email}</h3>
           </div>
         </div>
-        <div>
+        <div className="flex justify-center items-center gap-5 mt-5">
           <Button
             size="sm"
             onClick={handleSignOut}
             variant="bordered"
-            className="rgb-border border border-blue-700 duration-200 transition-colors text-base bg-blue-200 hover:bg-blue-300"
+            className=" border border-red-700 duration-200 transition-colors  bg-red-200 hover:bg-red-400"
           >
             <Link href="/">Log Out</Link>
+          </Button>
+          <Button size="sm" variant="bordered" className='border hover:bg-gray-100'>
+            Update Information
           </Button>
         </div>
       </Card>
