@@ -16,7 +16,6 @@ const onSubmit = async (e) => {
 
   const { data, error } = await authClient.updateUser({
     name,
-    
    
   });
 

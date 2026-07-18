@@ -1,6 +1,4 @@
 'use client';
-import { User } from 'lucide-react';
-import { LogOut } from 'lucide-react';
 import { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -8,6 +6,7 @@ import { usePathname } from 'next/navigation';
 import { Avatar, Button } from '@heroui/react';
 import { Menu, X } from 'lucide-react';
 import { authClient } from '@/lib/auth-client';
+import ProfileModal from '@/components/shared/ProfileModal';
 
 const navLinks = [
   { href: '/', label: 'Home' },
@@ -19,13 +18,10 @@ const navLinks = [
 export default function Navbar() {
   const userData = authClient.useSession();
   const user = userData.data?.user;
-  //console.log(user);
   const isPending = userData.isPending;
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
-  const handleSignOut = async () => {
-    await authClient.signOut();
-  };
+
   return (
     <header className="border-b bg-white">
       <nav className="max-w-7xl mx-auto h-16 px-4 sm:px-6 lg:px-8 flex items-center justify-between">
@@ -94,25 +90,7 @@ export default function Navbar() {
           )}
           {user && (
             <div className="flex justify-center items-center gap-2">
-              {/* <span className="text-sm font-medium text-gray-700">
-                {user.name}
-              </span> */}
-              <Avatar
-                size="sm"
-                className="ring-1 cursor-pointer ring-blue-600 ring-offset-1"
-              >
-                {user?.image ? (
-                  <Avatar.Image
-                    alt={user.name}
-                    src={user.image}
-                    referrerPolicy="no-referrer"
-                  />
-                ) : (
-                  <Avatar.Fallback>
-                    <User className="h-5 w-5 text-blue-500" />
-                  </Avatar.Fallback>
-                )}
-              </Avatar>
+              <ProfileModal user={user} />
               <h1 className="text-lg md:text-xl font-semibold font-jetbrains-mono">
                 {user?.name}!
               </h1>
@@ -167,22 +145,7 @@ export default function Navbar() {
             )}
             {user && (
               <div className="flex justify-start items-center gap-2">
-                <Avatar
-                  size="sm"
-                  className="ring-1 cursor-pointer ring-blue-600 ring-offset-1"
-                >
-                  {user?.image ? (
-                    <Avatar.Image
-                      alt={user.name}
-                      src={user.image}
-                      referrerPolicy="no-referrer"
-                    />
-                  ) : (
-                    <Avatar.Fallback>
-                      <User className="h-5 w-5 text-gray-500" />
-                    </Avatar.Fallback>
-                  )}
-                </Avatar>
+                <ProfileModal user={user} />
                 <h1 className="text-lg md:text-xl font-semibold font-jetbrains-mono">
                   {user?.name}!
                 </h1>
