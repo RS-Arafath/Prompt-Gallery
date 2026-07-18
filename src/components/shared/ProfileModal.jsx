@@ -43,7 +43,7 @@ export default function ProfileModal({ user }) {
             <Modal.Header className="items-center text-center">
               <Modal.Heading>
                 Hello,{' '}
-                <span className="font-jetbrains-mono  italic">
+                <span className="font-jetbrains-mono font-semibold  italic">
                   {user.name}!
                 </span>
               </Modal.Heading>
