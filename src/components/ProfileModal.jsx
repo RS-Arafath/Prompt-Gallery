@@ -1,9 +1,13 @@
 import React from 'react';
 import { Envelope } from '@gravity-ui/icons';
 import { Button, Input, Label, ListBoxItemIndicator, Modal, Surface, TextField } from '@heroui/react';
+import toast from 'react-hot-toast';
 import { SquarePen } from 'lucide-react';
 import { authClient } from '@/lib/auth-client';
+import { useRouter } from 'next/navigation';
 const ProfileModal = () => {
+  
+const router = useRouter();
 const onSubmit = async (e) => {
   e.preventDefault();
 
@@ -16,12 +20,16 @@ const onSubmit = async (e) => {
    
   });
 
-  if (error) {
-    console.log(error);
-    return;
-  }
+   if (error) {
+     toast.error(error.message || 'Update failed!');
+     return;
+   }
 
-  console.log(data);
+   toast.success('Update Successfully!');
+
+   setTimeout(() => {
+     router.push('/');
+   }, 1000);
 };
   return (
     <div>
