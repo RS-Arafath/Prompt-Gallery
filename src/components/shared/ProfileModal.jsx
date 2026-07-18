@@ -1,6 +1,6 @@
 'use client';
 import { Sparkles } from '@gravity-ui/icons';
-import { Avatar, Modal, Button, Card } from '@heroui/react';
+import { Avatar, Modal, Button, Card, Tooltip } from '@heroui/react';
 import { User as UserIcon, LogOut } from 'lucide-react';
 import { authClient } from '@/lib/auth-client';
 
@@ -12,19 +12,27 @@ export default function ProfileModal({ user }) {
   return (
     <Modal>
       <Modal.Trigger className="cursor-pointer">
-        <Avatar size="sm" className="ring-1 ring-blue-600 ring-offset-1">
-          {user?.image ? (
-            <Avatar.Image
-              alt={user.name}
-              src={user.image}
-              referrerPolicy="no-referrer"
-            />
-          ) : (
-            <Avatar.Fallback>
-              <UserIcon className="h-5 w-5 text-blue-500" />
-            </Avatar.Fallback>
-          )}
-        </Avatar>
+        <Tooltip delay={100}>
+          <Tooltip.Trigger>
+            <Avatar size="sm" className="ring-1 ring-blue-600 ring-offset-1">
+              {user?.image ? (
+                <Avatar.Image
+                  alt={user.name}
+                  src={user.image}
+                  referrerPolicy="no-referrer"
+                />
+              ) : (
+                <Avatar.Fallback>
+                  <UserIcon className="h-5 w-5 text-blue-500" />
+                </Avatar.Fallback>
+              )}
+            </Avatar>
+          </Tooltip.Trigger>
+          <Tooltip.Content>
+            <Tooltip.Arrow />
+            View Details 
+          </Tooltip.Content>
+        </Tooltip>
       </Modal.Trigger>
 
       <Modal.Backdrop
