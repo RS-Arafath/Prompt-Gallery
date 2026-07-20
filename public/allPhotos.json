@@ -93,10 +93,10 @@
   },
   {
     "id": 8,
-    "title": "Face Emerging From Liquid Mercury",
+    "title": "anime illustration",
     "imageUrl": "https://i.ibb.co.com/gZYkftj1/20.png",
-    "prompt": "hyper-close portrait of a woman’s face emerging through a surface of liquid red mercury, the metallic fluid stretched and clinging to her skin as it breaks. The surface tension distorts her lips and one eye beneath it, creating warped reflections. The mercury gleams with deep crimson highlights, reflecting faint gold rim light along her cheekbones. Her visible eye is half-lidded, calm and distant. Background dissolves into pure black. Fine particles shimmer in the air. Style: noir couture, liquid metal realism, cinematic lighting.",
-    "category": "Surreal",
+    "prompt": "Use the uploaded reference image as the sole character identity reference. Preserve the exact face and identity with the highest possible fidelity. Keep the facial structure, eye shape and color, eyebrows, nose, lips, jawline, chin, skin tone, hairstyle, bangs, expression, and all facial proportions identical to the reference image. Do not redesign, beautify, reinterpret, or modify the face. The character must be instantly recognizable as the same person from the reference image. Create a full-body premium anime illustration of the exact same character. Pose: relaxed and confident standing pose, one leg slightly forward, holding a takeaway coffee cup in the right hand while the left hand gently holds the strap of a small brown leather shoulder bag. Elegant posture with natural body proportions. Outfit: fitted pastel pink short-sleeve ribbed turtleneck knit top, high-waisted cream pencil skirt, brown knee-high leather boots with buckle details, minimalist jewelry, fashionable everyday streetwear. Hair: identical to the reference image, long silky black hair with soft bangs, naturally flowing with delicate strands and subtle movement. Expression: gentle smile, calm and friendly, soft blush, expressive violet eyes matching the reference. Background: pure white seamless studio backdrop with soft professional studio lighting, subtle ambient shadows, clean negative space, minimalist composition. Rendering Style: masterpiece, best quality, ultra detailed, premium anime illustration, modern fashion portrait, Japanese light novel cover art, refined character design, cinematic composition, crisp linework, soft cel shading blended with painterly rendering, realistic fabric folds, highly detailed leather textures, glossy takeaway coffee cup, elegant hand anatomy, highly detailed eyes, warm skin tones, sharp focus, HDR, ultra high resolution, 8K.",
+    "category": "Realistic",
     "model": "DALL·E 3",
     "resolution": "1792x1024",
     "likes": 438,

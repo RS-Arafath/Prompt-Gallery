@@ -23,12 +23,12 @@ const Category = ({ categories, selectedCategory }) => {
 
   return (
     <Select
-      className="mt-4 w-64"
+      className="mt-4 w-50"
       placeholder="All Photos"
       value={selectedCategory || 'all'}
       onChange={handleChange}
     >
-      <Label> Search By Category</Label>
+      <Label className="block mb-1 text-right text-gray-500 font-medium">Search By Category</Label>
       <Select.Trigger>
         <Select.Value />
         <Select.Indicator />
