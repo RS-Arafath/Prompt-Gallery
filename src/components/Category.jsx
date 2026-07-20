@@ -10,11 +10,10 @@ const Category = ({ categories, selectedCategory }) => {
   const searchParams = useSearchParams();
 
   const handleChange = (key) => {
-    const value = key ?? '';
     const params = new URLSearchParams(searchParams.toString());
 
-    if (value) {
-      params.set('category', value);
+    if (key && key !== 'all') {
+      params.set('category', key);
     } else {
       params.delete('category');
     }
@@ -25,17 +24,20 @@ const Category = ({ categories, selectedCategory }) => {
   return (
     <Select
       className="mt-4 w-64"
-      placeholder="All Categories"
-      value={selectedCategory || null}
+      placeholder="All Photos"
+      value={selectedCategory || 'all'}
       onChange={handleChange}
     >
-      <Label className='text-xs font-light'>Select any Category</Label>
+      {/* <Label> Select Any Category</Label> */}
       <Select.Trigger>
         <Select.Value />
         <Select.Indicator />
       </Select.Trigger>
       <Select.Popover>
         <ListBox>
+          <ListBox.Item id="all" textValue="All Photos">
+            All Photos
+          </ListBox.Item>
           {categories.map((cat) => (
             <ListBox.Item key={cat.id} id={cat.name} textValue={cat.name}>
               {cat.name}
