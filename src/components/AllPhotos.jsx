@@ -34,8 +34,9 @@ export const AllPhotos = async () => {
                 {/* Background */}
                 <Image
                   src={item.imageUrl}
-                  alt=""
+                  alt="image"
                   fill
+                  sizes="(max-width: 768px) 100vw, 25vw"
                   className="object-cover blur-2xl brightness-50"
                   aria-hidden
                 />

@@ -33,7 +33,8 @@ const data = JSON.parse(fileContents);
               {/* Background */}
               <Image
                 src={item.imageUrl}
-                alt=""
+                alt="img"
+                sizes="(max-width: 768px) 100vw, 25vw"
                 fill
                 className="object-cover blur-2xl brightness-50"
                 aria-hidden
