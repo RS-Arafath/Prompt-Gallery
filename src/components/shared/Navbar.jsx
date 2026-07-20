@@ -12,7 +12,7 @@ const navLinks = [
   { href: '/', label: 'Home' },
   { href: '/topGenarated', label: 'Top Genarated' },
   { href: '/allPhotos', label: 'All Photos' },
-  { href: '/profile', label: 'Profile' },
+
 ];
 
 export default function Navbar() {
