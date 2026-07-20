@@ -1,9 +1,14 @@
 # 🎨 Prompt Gallery
 
-> A modern AI-generated image gallery where users can explore, filter, and discover creative prompts across multiple art styles.
+> A modern AI-generated image gallery where users can explore, filter, and discover curated prompts across multiple art styles — then take any prompt straight to their favorite AI image generator (ChatGPT, Gemini, Midjourney, DALL·E, Stable Diffusion, and more) to create their own version of the artwork.
 
-**🔗 Live Demo:** [promptgallery-ai.vercel.app](https://promptgallery-ai.vercel.app/)
-**👨‍💻 Author:** [RS Arafath](https://github.com/RS-Arafath) · [Portfolio](https://rs-arafath.vercel.app)
+<p align="center">
+  <a href="https://promptgallery-ai.vercel.app/"><img src="https://img.shields.io/badge/Live%20Demo-Visit%20Site-black?style=for-the-badge&logo=vercel&logoColor=white" alt="Live Demo" /></a>
+  <a href="https://github.com/RS-Arafath"><img src="https://img.shields.io/badge/GitHub-RS--Arafath-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" /></a>
+  <a href="https://rs-arafath.vercel.app"><img src="https://img.shields.io/badge/Portfolio-rs--arafath.vercel.app-4f46e5?style=for-the-badge&logo=vercel&logoColor=white" alt="Portfolio" /></a>
+</p>
+
+
 
 ## Home
 <p align="center">
