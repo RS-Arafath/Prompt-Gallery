@@ -39,7 +39,7 @@ const AllPhotosPage = async ({ searchParams }) => {
             </p>
           </div>
 
-          <div className="f">
+          <div className="">
             <Category
               categories={categories}
               selectedCategory={category ?? ''}
