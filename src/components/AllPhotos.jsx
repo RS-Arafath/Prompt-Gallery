@@ -7,6 +7,8 @@ import fs from 'fs/promises';
 import path from 'path';
 
 export const AllPhotos = async () => {
+   
+    
   const filePath = path.join(process.cwd(), 'public', 'allPhotos.json');
   const fileContents = await fs.readFile(filePath, 'utf-8');
   const data = JSON.parse(fileContents);
