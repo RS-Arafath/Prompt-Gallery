@@ -39,7 +39,7 @@ export default function ProfileModal({ user }) {
         className="bg-linear-to-t from-black/80 via-black/40 to-transparent dark:from-zinc-800/80 dark:via-zinc-800/40"
         variant="transparent"
       >
-        <Modal.Container className="!block !p-0">
+        <Modal.Container className="!block !p-0 ">
           <Modal.Dialog
             className="
               !fixed !top-1/2 !left-1/2 !-translate-x-1/2 !-translate-y-1/2 !m-0
