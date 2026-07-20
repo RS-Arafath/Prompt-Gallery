@@ -73,11 +73,6 @@ The trickiest part of this project. The goal was a dropdown that filters the gal
 - **Missing "All Photos" reset option:** The dropdown initially only listed specific categories with no way to clear the filter. Solved by adding a manual `"all"` option that deletes the `category` param from the URL when selected.
 - **Loading state on filter change:** Added a route-level `loading.jsx` (App Router convention) inside `app/allPhotos/` so a skeleton grid displays while the server refetches and filters data — being careful to place it at the correct route level and not conflict with the existing `[id]/loading.jsx` used for the photo detail page.
 
-### 2.Proxy Migration (Next.js 16)
-Starting with **Next.js 16**, the `middleware.ts`/`middleware.js` file convention was renamed to `proxy.ts`/`proxy.js`, and the exported function name changed from `middleware` to `proxy`. The functionality is unchanged — it still runs server-side before a request completes, useful for authentication checks, redirects, rewrites, and modifying request/response headers. The rename exists mainly to avoid confusion with Express.js-style middleware and to better reflect that this layer behaves like a network-boundary proxy in front of the app.
-
-Since this project runs on Next.js 16.2.10, `proxy.js` follows this new convention. One important gotcha to be aware of: if a leftover `middleware.ts` file exists from an older setup, Next.js 16 silently ignores it at build time — no error, no warning — which can quietly disable auth/redirect protection on routes that are supposed to be gated. Running `npx @next/codemod@canary middleware-to-proxy .` handles the rename automatically if migrating an older project.
-
 ### 2. Proxy
 Next.js 16 renamed the `middleware` file convention to `proxy` — same execution model (runs server-side before a request completes), just a new file name (`proxy.js`) and exported function name (`proxy`) instead of `middleware`.
  
