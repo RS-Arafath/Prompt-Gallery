@@ -28,7 +28,7 @@ const Category = ({ categories, selectedCategory }) => {
       value={selectedCategory || 'all'}
       onChange={handleChange}
     >
-      {/* <Label> Select Any Category</Label> */}
+      <Label> Search By Category</Label>
       <Select.Trigger>
         <Select.Value />
         <Select.Indicator />
