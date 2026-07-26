@@ -80,7 +80,7 @@ const PhotoDetails = ({ photo, backLink }) => {
 
             <div className="rounded-xl border p-2 sm:p-3 md:p-4">
               <p className="text-base font-semibold text-default-500 md:text-lg">
-               Likes
+                Likes
               </p>
               <p className="font-medium text-xs md:text base">{photo.likes}</p>
             </div>
