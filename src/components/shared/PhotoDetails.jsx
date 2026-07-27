@@ -15,9 +15,9 @@ const PhotoDetails = ({ photo, backLink }) => {
       </div>
 
       <div className="grid  grid-cols-1 gap-10 lg:grid-cols-[2fr_3fr] lg:gap-14">
-        {/* Left */}
+       
         <div className="group relative aspect-square overflow-hidden rounded-2xl border bg-black shadow-lg">
-          {/* Blurred Background */}
+          {/* Blurred Bg */}
           <Image
             src={photo.imageUrl}
             alt={photo.title}
